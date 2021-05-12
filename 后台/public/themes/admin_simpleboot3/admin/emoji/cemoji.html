@@ -1,0 +1,75 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('emoji/cemoji')}">所有表情</a></li>
+        <li><a href="{:url('emoji/add')}">添加表情</a></li>
+        <li><a href="{:url('emoji/adds')}">添加批量表情</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20" action="{:url('Emoji/delall')}">
+        <div class="table-actions">
+            <button class="btn btn-sm btn-primary js-ajax-submit" type="submit">批量删除</button>
+            <text>总计：{$count}条</text>
+        </div>
+        <php>$status=array("1"=>lang('DISPLAY'),"0"=>lang('HIDDEN'));</php>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x"
+                                             data-checklist="js-check-x"></label></th>
+                <th width="50">ID</th>
+                <th width="50">分类ID</th>
+                <th width="50">标题</th>
+                <th width="50">显示</th>
+                <th width="50">链接</th>
+                <th width="50">类型</th>
+                <th width="50">分组</th>
+                <th width="50">上传时间</th>
+                <th width="120">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                               value="{$vo.id}"></td>
+                    <td>{$vo.id}</td>
+                    <td>{$vo.cat_id}</td>
+                    <td>{$vo.name}</td>
+                    <td><img wigth="25" height="25" onclick="imagePreviewDialog(this.src)" src="{$vo.src}"></td>
+                    <td><a href="{$vo.src}" target="_blank">{$vo.src}</a></td>
+                    <td>
+                        <switch name="$vo.type">
+                            <case value="1">表情包</case>
+                            <case value="2">头像</case>
+                            <case value="3">壁纸</case>
+                        </switch>
+                    </td>
+                    <td>
+                        <foreach name="cat" item="voo">
+						    <if condition="$vo.cat_id eq $voo.id">
+						        {$voo.descs}
+						    </if>
+						</foreach>
+                    </td>
+                    <td>{:date('Y-m-d H:i:s',$vo.createtime)}</td>
+                    <td>
+                        <a class="btn btn-xs btn-primary" href="{:url('emoji/edit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a class="btn btn-xs btn-danger" href="{:url('emoji/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">
+                            {:lang('DELETE')}
+                        </a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="table-actions">
+            <!--<button class="btn btn-sm btn-primary js-ajax-submit" type="submit">批量删除</button>-->
+            <div class="pagination">{$list->render()}</div>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

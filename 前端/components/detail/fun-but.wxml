@@ -1,0 +1,18 @@
+<view>
+    <view class="flex justify-around bg-white">
+        <view bindtap="__e" class="cu-chat align-center padding-sm" data-event-opts="{{[ [ 'tap',[ [ 'clickBut',['$0'],[ [ ['resdata','',index,'type'] ] ] ] ] ] ]}}" wx:for="{{resdata}}" wx:key="index">
+            <view class="{{['text-yellow margin-bottom-xs menu-item','cuIcon-'+item.type]}}"></view>
+            <text>{{item.title}}</text>
+        </view>
+    </view>
+    <view class="flex bg-white btn-bg margin-bottom-sm">
+        <button class="but flex justify-center align-center" openType="share">
+            <view class="text-yellow cuIcon-appreciate btn-icon"></view>
+            <text class="btn-text">推荐表情</text>
+        </button>
+        <!-- <view bindtap="__e" class="flex align-center justify-center btn-change" data-event-opts="{{[ [ 'tap',[ [ 'changeAdd',['$event'] ] ] ] ]}}">
+            <view class="text-yellow cuIcon-write btn-icon"></view>
+            <text class="btn-text">改图</text>
+        </view> -->
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<view>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="100rpx" vueId="39a5e000-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <search bind:__l="__l" bind:listenMake="__e" data-event-opts="{{[ [ '^listenMake',[ ['listenMake'] ] ] ]}}" vueId="{{'39a5e000-2'+','+'39a5e000-1'}}"></search>
+        </view>
+        <view slot="content">
+            <more-pic bind:__l="__l" bind:openPopup="__e" data-event-opts="{{[ [ '^openPopup',[ ['openPopup'] ] ] ]}}" makeText="{{makeText}}" pageType="make" resdata="{{list}}" vueId="{{'39a5e000-3'+','+'39a5e000-1'}}"></more-pic>
+        </view>
+    </tui-sticky>
+    <private-btn bind:__l="__l" bind:openPrivate="__e" data-event-opts="{{[ [ '^openPrivate',[ ['openPrivate'] ] ] ]}}" privateKey="{{privateKey}}" vueId="39a5e000-4"></private-btn>
+    <popup-private bind:__l="__l" bind:closePrivate="__e" data-event-opts="{{[ [ '^closePrivate',[ ['closePrivate'] ] ] ]}}" privateKey="{{privateKey}}" vueId="39a5e000-5"></popup-private>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="39a5e000-6"></back-top>
+    <poup-pic adClick="{{adClick}}" bind:__l="__l" bind:deductScore="__e" bind:popupClose="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^popupClose',[ ['popupClose'] ] ],[ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^deductScore',[ ['deductScore'] ] ] ]}}" imgInfo="{{imgInfo}}" makeText="{{makeText}}" popupKey="{{popupKey}}" score="{{score}}" userInfo="{{userInfo}}" vueId="39a5e000-7"></poup-pic>
+    <ads-video adType="{{adType}}" bind:__l="__l" bind:changeAd="__e" bind:newScore="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeAd',[ ['changeAd'] ] ],[ '^newScore',[ ['newScore'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="39a5e000-8"></ads-video>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="39a5e000-9" wx:if="{{list.length}}"></uni-load-more>
+    <tui-modal bind:__l="__l" bind:click="__e" content="您还未登录，请先登录" data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}" maskClosable="{{false}}" show="{{showLogin}}" vueId="39a5e000-10"></tui-modal>
+</view>

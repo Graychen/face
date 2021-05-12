@@ -1,0 +1,30 @@
+<view class="u-skeleton">
+    <block wx:for="{{$root.l0}}" wx:key="index">
+        <view bindtap="__e" class="padding-lr" data-event-opts="{{[ [ 'tap',[ [ 'toApp',['$0','$1'],[ [ ['data.data','',index,'goods_id'] ],[ ['data.data','',index,'discount_link'] ] ] ] ] ] ]}}">
+            <view class="goods">
+                <view class="goods-img u-skeleton-fillet">
+                    <image lazyLoad="{{true}}" mode="aspectFill" src="{{item[$orig].goods_img}}"></image>
+                </view>
+                <view class="goods-content">
+                    <view>
+                        <text class="goods-title u-skeleton-fillet">{{item[$orig].goods_name}}</text>
+                        <text class="goods-introduce u-skeleton-fillet">{{item[$orig].goods_content}}</text>
+                    </view>
+                    <view class="flex text-red justify-between align-end">
+                        <view class="u-skeleton-fillet">
+                            <text class="text-xs text-bold">￥</text>
+                            <text class="text-xl">{{item[$orig].coupon_price}}</text>
+                        </view>
+                        <view catchtap="__e" class="flex align-center u-skeleton-fillet is-like" data-event-opts="{{[ [ 'tap',[ [ 'isLike',['$0','$1',index],[ [ ['data.data','',index,'goods_id'] ],[ ['data.data','',index,'is_like'] ] ] ] ] ] ]}}">
+                            <text class="{{[ 'icon','cuIcon-like'+(item[$orig].is_like?'fill':'') ]}}"></text>
+                            <text>人喜欢</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="deliver" wx:if="{{item.m0}}"></view>
+    </block>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{state.status}}" vueId="dcd1590e-1"></uni-load-more>
+    <u-skeleton animation="{{true}}" bind:__l="__l" loading="{{state.loading}}" vueId="dcd1590e-2"></u-skeleton>
+</view>

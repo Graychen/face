@@ -1,0 +1,5 @@
+<view>
+    <view class="margin-lr padding-tb">
+        <view wx:for="{{data}}" wx:key="index">{{item}}</view>
+    </view>
+</view>

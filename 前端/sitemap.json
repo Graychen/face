@@ -1,0 +1,44 @@
+{
+    "rules": [
+        {
+            "action": "disallow",
+            "page": "pages/collection/collection"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/user/user"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/report/report"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/jump-author/jump-author"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/add-text/add-text"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/upload-emoji/upload-emoji"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/public-num/public-num"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/user-agreement/user-agreement"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/upload/upload"
+        },
+        {
+            "action": "disallow",
+            "page": "pages/make/show"
+        }
+    ]
+}

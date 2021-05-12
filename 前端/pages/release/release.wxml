@@ -1,0 +1,60 @@
+<view class="bg-white">
+    <scroll-view class="{{['DrawerPage',modalName=='viewModal'?'show':'']}}" scrollY="{{true}}">
+        <view>
+            <button catchtap="__e" class="{{['cu-btn shadow send',sendColor]}}" data-event-opts="{{[ [ 'tap',[ [ 'send',['$event'] ] ] ] ]}}">发表</button>
+            <view class="cu-form-group margin-top-xl">
+                <textarea bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'textareaAInput',['$event'] ] ] ] ]}}" disabled="{{areaName!=null}}" maxlength="-1" placeholder="这一刻的想法..."></textarea>
+            </view>
+            <view class="cu-form-group margin-top-xs" style="border-top:unset;">
+                <view class="grid col-3 grid-square flex-sub">
+                    <view bindtap="__e" class="bg-img" data-event-opts="{{[ [ 'tap',[ [ 'ViewImage',['$0'],[ [ ['imgList','',index,'url'] ] ] ] ] ] ]}}" wx:for="{{imgList}}" wx:key="index">
+                        <image lazyLoad="{{true}}" mode="aspectFill" src="{{item.url}}"></image>
+                        <view catchtap="__e" class="cu-tag bg-red" data-event-opts="{{[ [ 'tap',[ [ 'DelImg',['$0',index],[ [ ['imgList','',index] ] ] ] ] ] ]}}">
+                            <text class="cuIcon-close"></text>
+                        </view>
+                    </view>
+                    <view bindtap="__e" class="solids" data-event-opts="{{[ [ 'tap',[ [ 'ChooseImage',['$event'] ] ] ] ]}}" wx:if="{{imgList.length<9}}">
+                        <text class="cuIcon-cameraadd"></text>
+                    </view>
+                </view>
+            </view>
+            <view class="{{['margin-lr padding-top flex align-center solid-top text-lg text-bold',activeColor]}}">
+                <text>#</text>
+                <text class="margin-left-sm">选择话题</text>
+                <text class="text-color-b2 text-xs">{{'（已选'+activeTopic.length+' / 2）'}}</text>
+            </view>
+            <view class="padding-right" style="margin-left:70rpx;">
+                <view class="{{['flex flex-wrap',noActive]}}">
+                    <view catchtap="__e" class="{{['bg-f5 radius-12 topic',activeTopic[0]==item.id||activeTopic[1]==item.id?'active-topic':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseTopic',['$0'],[ [ ['topic','id',item.id,'id'] ] ] ] ] ] ]}}" wx:if="{{index<7}}" wx:for="{{topic}}" wx:key="id">
+                        <text class="margin-right-xs">#</text>{{item.name+''}}</view>
+                    <view bindtap="__e" class="bg-f5 radius-12 topic" data-event-opts="{{[ [ 'tap',[ [ 'showModal',['$event'] ] ] ] ]}}" data-target="viewModal">
+                        <text class="margin-right-xs">更多话题</text>
+                        <text class="cuIcon-more"></text>
+                    </view>
+                </view>
+            </view>
+            <view class="cu-chat text-color-b2 margin-lr margin-top-xl" style="line-height:45rpx;">
+                <text class="text-bold">友情提示：</text>
+                <view class="flex margin-top-xs" wx:if="{{IsAdVideo}}">
+                    <view>
+                        <text class="margin-left-xs">内容被他人成功下载、保存后奖励</text>
+                        <text class="margin-left-xs text-red text-bold">0.5积分</text>。</view>
+                </view>
+                <view class="flex margin-top-xs">
+                    <text class="margin-left-xs">发表的内容经过人工审核确认无任何色情、低俗、暴力、政治、违法等令人不适的内容后方可显示。</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view bindtap="__e" class="{{['DrawerClose',modalName=='viewModal'?'show':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}">
+        <text class="cuIcon-pullright"></text>
+    </view>
+    <scroll-view class="{{['DrawerWindow',modalName=='viewModal'?'show':'']}}" scrollY="{{true}}">
+        <view class="margin-tb-xl margin-lr-lg all-shadow radius-12 padding-lr padding-bottom-sm">
+            <view class="{{['flex flex-wrap',noActive]}}">
+                <view catchtap="__e" class="{{['bg-f5 radius-12 topic',activeTopic[0]==item.id||activeTopic[1]==item.id?'active-topic':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseTopic',['$0'],[ [ ['more_topic','id',item.id,'id'] ] ] ] ] ] ]}}" wx:for="{{more_topic}}" wx:key="id">
+                    <text class="margin-right-xs">#</text>{{item.name+''}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

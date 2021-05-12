@@ -1,0 +1,108 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li><a href="{:url('emoji/ad')}">所有广告位</a></li>
+        <li class="active"><a>编辑广告</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('emoji/adeditPost')}">
+        <div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">所属小程序<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="appid" id="input-target">
+						<foreach name="wxapps" item="vo">
+						    <if condition="$link.appid eq $key">
+						      <option value="{$key}" selected>{$vo.name}</option>
+						    <else/>
+						      <option value="{$key}">{$vo.name}</option>
+						    </if>
+						</foreach>
+					</select>
+				</div>
+			</div>
+		<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">广告<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="isVideo" id="input-target">
+						<foreach name="status" item="vo">
+						    <if condition="$link.isVideo eq $key">
+						      <option value="{$key}" selected>{$vo}</option>
+						    <else/>
+						      <option value="{$key}">{$vo}</option>
+						    </if>
+						</foreach>
+					</select>
+				</div>
+		</div>
+		<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">审计<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="isAudit" id="input-target">
+						<foreach name="status" item="vo">
+						    <if condition="$link.isAudit eq $key">
+						      <option value="{$key}" selected="">{$vo}</option>
+						    <else/>
+						      <option value="{$key}">{$vo}</option>
+						    </if>
+						</foreach>
+					</select>
+				</div>
+		</div>
+		<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">付费<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="isPay" id="input-target">
+						<foreach name="status" item="vo">
+						    <if condition="$link.isPay eq $key">
+						      <option value="{$key}" selected="">{$vo}</option>
+						    <else/>
+						      <option value="{$key}">{$vo}</option>
+						    </if>
+						</foreach>
+					</select>
+				</div>
+		</div>
+        <div class="form-group">
+            <label for="input-link_url" class="col-sm-2 control-label">激励广告<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_url" name="videoId" value="{$link.videoId}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-link_url" class="col-sm-2 control-label">首页广告<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_url" name="interId" value="{$link.interId}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-link_url" class="col-sm-2 control-label">详情广告<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_url" name="plaidId" value="{$link.plaidId}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-link_url" class="col-sm-2 control-label">免费时间<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_url" name="time" value="{$link.time}">
+            </div>
+        </div>        
+        <div class="form-group">
+            <label for="input-link_description" class="col-sm-2 control-label">广告提示</label>
+            <div class="col-md-6 col-sm-10">
+                <textarea class="form-control" name="msg"
+                          id="input-link_description">{$link.msg}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="id" value="{$link.id}">
+                <button type="submit" class="btn btn-primary js-ajax-submit">{:lang('SAVE')}</button>
+                <a class="btn btn-default" href="{:url('emoji/ad')}">{:lang('BACK')}</a>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

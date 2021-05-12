@@ -1,0 +1,16 @@
+{
+    "onReachBottomDistance": 50,
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "left-capsule": "/components/common/left-capsule",
+        "wallpaper-pic": "/components/detail/wallpaper-pic",
+        "up-pic": "/components/detail/up-pic",
+        "hot-nav": "/components/common/hot-nav",
+        "waterfall-flow": "/components/detail/waterfall-flow",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "wallpaper-btn": "/components/detail/wallpaper-btn",
+        "ads": "/components/common/ads",
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

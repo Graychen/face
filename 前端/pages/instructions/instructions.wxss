@@ -1,0 +1,10 @@
+.margin-tb {
+    width: 690rpx;
+    line-height: 40rpx;
+}
+
+.img-box-shadow {
+    width: 400rpx;
+    border-radius: 12rpx;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,.1);
+}

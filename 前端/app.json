@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/collection/collection",
+    "pages/user/user",
+    "pages/detail/Image-details",
+    "pages/report/report",
+    "pages/detail/suit-code",
+    "pages/add-text/add-text",
+    "pages/public-num/public-num",
+    "pages/user-agreement/user-agreement",
+    "pages/routine/routine",
+    "pages/routine-details/routine-details",
+    "pages/instructions/instructions",
+    "pages/detail/wallpaper-detail",
+    "pages/detail/more-wallpaper",
+    "pages/make/show",
+    "pages/income-statement/income-statement",
+    "pages/cash-withdrawal/cash-withdrawal",
+    "pages/dynamic-detail/dynamic-detail",
+    "pages/integral-rule/integral-rule",
+    "pages/punch-clock/punch-clock",
+    "pages/punch-clock/rule/rule",
+    "pages/punch-clock/record/record",
+    "pages/user/task/task",
+    "pages/user/task/rule/rule",
+    "pages/mall/mall",
+    "pages/mall/favorite/favorite",
+    "pages/waimai/waimai",
+    "pages/emoji/emoji"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "棒棒糖表情包",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#2C2C2C",
+    "selectedColor": "#FFB300",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/images/tabbar/home.png",
+        "selectedIconPath": "static/images/tabbar/home-fill.png"
+      },
+      {
+        "pagePath": "pages/detail/more-wallpaper",
+        "text": "壁纸",
+        "iconPath": "static/images/tabbar/make.png",
+        "selectedIconPath": "static/images/tabbar/make-fill.png"
+      },
+      {
+        "pagePath": "pages/waimai/waimai",
+        "text": "福利",
+        "iconPath": "static/images/tabbar/mall.png",
+        "selectedIconPath": "static/images/tabbar/mall-fill.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "static/images/tabbar/user.png",
+        "selectedIconPath": "static/images/tabbar/user-fill.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx91d27dbf599dff74"
+  ],
+  "sitemapLocation": "sitemap59.json"
+}

@@ -1,0 +1,51 @@
+.page {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 999;
+}
+
+.content,.page {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.content {
+    width: 590rpx;
+    font-size: 28rpx;
+    color: #888;
+    line-height: 44rpx;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 30rpx;
+    box-sizing: border-box;
+    border-radius: 12rpx;
+    background-color: #fff;
+}
+
+.img {
+    width: 250rpx;
+    margin-bottom: 20rpx;
+}
+
+.title {
+    font-size: 34rpx;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 16rpx;
+}
+
+.btn {
+    color: #fff;
+    padding: 20rpx 130rpx;
+    margin-top: 30rpx;
+    border-radius: 60rpx;
+    background-image: linear-gradient(135deg,#ef8a92,#eb5e73);
+}

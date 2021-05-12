@@ -1,0 +1,7 @@
+<view class="flex flex-wrap margin-top-sm">
+    <image bindtap="__e" class="{{['radius value-img',bbsDetailKey?'more-pic-big':'more-pic-small']}}" data-event-opts="{{[ [ 'tap',[ [ 'preViewImage',['$0',index],['resdata'] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{item.src}}" wx:if="{{resdata.length>1}}" wx:for="{{resdata}}" wx:key="index"></image>
+    <block wx:if="{{resdata.length==1}}">
+        <image bindtap="__e" class="radius value-img wid" data-event-opts="{{[ [ 'tap',[ [ 'preViewImage',['$0',index],['resdata'] ] ] ] ]}}" lazyLoad="{{true}}" mode="widthFix" src="{{item.src}}" wx:if="{{item.width>=item.height}}" wx:for="{{resdata}}" wx:key="index"></image>
+        <image bindtap="__e" class="radius value-img hei" data-event-opts="{{[ [ 'tap',[ [ 'preViewImage',['$0',index],['resdata'] ] ] ] ]}}" lazyLoad="{{true}}" mode="heightFix" src="{{item.src}}" wx:if="{{item.width<item.height}}" wx:for="{{resdata}}" wx:key="index"></image>
+    </block>
+</view>

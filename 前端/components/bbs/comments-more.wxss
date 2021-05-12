@@ -1,0 +1,13 @@
+.back-name {
+    float: left;
+    height: 40rpx;
+    line-height: 40rpx;
+    white-space: nowrap;
+}
+
+.content-img {
+    width: 150rpx;
+    height: 150rpx;
+    margin-top: 8rpx;
+    display: block;
+}

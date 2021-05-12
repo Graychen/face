@@ -1,0 +1,207 @@
+<include file="public@header"/>
+    <script type="text/javascript">
+        //全局变量
+        var GV = {
+            ROOT: "{:cmf_get_root()}/",
+            WEB_ROOT: "{:cmf_get_root()}/",
+            JS_ROOT: "static/js/"
+        };
+    </script>
+    <script src="__STATIC__/js/jquery.js"></script>
+    <script src="__STATIC__/js/wind.js"></script>
+    <script type="text/html" id="exec-success-msg-tpl">
+        <li>
+            <i class="fa fa-check correct"></i>
+            {message}<br>
+            <pre>{sql}</pre>
+        </li>
+    </script>
+    <script type="text/html" id="exec-fail-msg-tpl">
+        <li>
+            <i class="fa fa-check correct"></i>
+            {message}<br>
+        </li>
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('Caiji/zuihuo')}">最火表情包</a></li>
+    </ul>
+    <form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('caiji/czuihuo')}">
+        <div class="form-group">
+            <label for="input-from_name" class="col-sm-2 control-label">
+                <span class="form-required">*</span>
+                采集多少页
+            </label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-from_name" name="num"
+                       value="{$from_name|default=''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-from_name" class="col-sm-2 control-label">
+                <span class="form-required"></span>
+                关键字
+            </label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" placeholder="可为空" class="form-control" id="input-from_name" name="name"
+                       value="{$from_name|default=''}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-from_name" class="col-sm-2 control-label">
+                <span class="form-required"></span>
+                类型
+            </label>
+            <div class="col-md-6 col-sm-10">
+                <select class="form-control" name="type" id="input-type" onchange="fn()">
+					<foreach name="type" item="vo">
+						 <option value="{$key}">{$vo}</option>
+					</foreach>
+				</select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-from_name" class="col-sm-2 control-label">
+                <span class="form-required"></span>
+                类型id
+            </label>
+            <div class="col-md-6 col-sm-10">
+                <select class="form-control" name="category_id" id="input-cattype" onload="fnn()">
+                          
+				</select>
+                <span class="form-required">
+                    {表情包：1熊猫头、2动漫、5蘑菇头、6抖音、11可爱、12萌宠、27沙雕} 
+                    <br>{头像：13情侣、14动漫男头、15动漫女头、16潮男、17潮女、18搞笑、28抖音} 
+                    <br>{壁纸：19可爱、20唯美、21动漫、22背景、23游戏、29抖音}
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-from_name" class="col-sm-2 control-label">
+                <span class="form-required"></span>
+                规则
+            </label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" placeholder="规则" class="form-control" id="input-from_name" name="order"
+                       value="{$from_name|default='sort desc, click desc'}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input-from_name" class="col-sm-2 control-label">
+                <span class="form-required"></span>
+                is_make
+            </label>
+            <div class="col-md-6 col-sm-10">
+                <input type="text" placeholder="is_make" class="form-control" id="input-from_name" name="is_make"
+                       value="{$from_name|default='0'}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary js-ajax-submit">①获取链接</button>
+                <button type="button" class="btn btn-primary js-ajax-submit" onclick="install(1)">②开始采集</button>
+            </div>
+        </div>
+    </form>
+        <div class="install" id="log" style="height:500px;overflow-y: scroll;">
+            <ul id="install-msg-panel" class="unstyled" style="height:500px;"></ul>
+        </div>
+    <div class="bottom text-center" id="xianshi" style="display:none">
+        <a href="javascript:;"><i class="fa fa-refresh fa-spin"></i>&nbsp;正在采集...</a>
+    </div>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+<script>
+    $(function () {
+        $('#js-smtpsecure').val("{$smtp_secure|default=''}");
+    });
+</script>
+	<script type="text/javascript">
+	       var install = document.getElementById("install-msg-panel");
+	       var type = document.getElementById("input-type");
+           var cattype = document.getElementById("input-cattype");
+           var res = <?php echo ($res);?>;
+           var t = type.value;
+           res[t].forEach(function(value){
+               	cattype.options.add(new Option(value['id']+value['descs'],value['id']));
+           });
+       function fn(){
+           var type = document.getElementById("input-type");
+           var cattype = document.getElementById("input-cattype");
+           cattype.options.length=0;
+           var t = type.value;
+           var res = <?php echo ($res);?>;
+           res[t].forEach(function(value){
+               	cattype.options.add(new Option(value['id']+value['descs'],value['id']));
+           });
+       }
+</script>
+    <script type="text/javascript">
+        $(function () {
+            //install(0);
+        });
+
+        Wind.use("noty", function () {
+
+        });
+        var xianshi          = $('#xianshi');
+        var $installMsgPanel = $('#install-msg-panel');
+        var $log             = $("#log");
+        var execSuccessTpl   = $('#exec-success-msg-tpl').html();
+        var execFailTpl      = $('#exec-fail-msg-tpl').html();
+        var sqlExecResult;
+        
+        function install(sqlIndex) {
+            xianshi.css("display","block");
+            $.ajax({
+                url: "{:url('caiji/czuihuo')}",
+                data: {sql_index: sqlIndex},
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    //console.log(data);
+                    var line = sqlIndex + 1;
+                    if (data.code == 1) {
+                        if (data.data == 1) {
+                            var tpl = execSuccessTpl;
+                            tpl     = tpl.replace(/\{message\}/g,  data.msg + '.' + line);
+                            tpl     = tpl.replace(/\{sql\}/g, data.data.name + '.' + data.data.cdnurl);
+                            $installMsgPanel.append(tpl);
+                            $('#install').scrollTop(300);
+                        }else{
+                            var tpl = execSuccessTpl;
+                            tpl     = tpl.replace(/\{message\}/g,  data.msg + '.' + line);
+                            tpl     = tpl.replace(/\{sql\}/g, data.data.name + '.' + data.data.cdnurl);
+                            $installMsgPanel.append(tpl);
+                            $('#install').scrollTop(300);
+                        }
+                    }else if (data.code == 0) {
+
+                        var tpl = execFailTpl;
+                        tpl     = tpl.replace(/\{message\}/g, '.' + data.msg);
+                        $installMsgPanel.append(tpl);
+                        xianshi.css("display","none");
+                    }
+
+                    $log.scrollTop(1000000000);
+
+                    if (data.code != 0) {
+                        sqlIndex++;
+                        install(sqlIndex);
+                    }
+
+
+                },
+                error: function () {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+    </script>
+</body>
+</html>

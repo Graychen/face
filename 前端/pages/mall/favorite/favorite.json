@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "收藏夹",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColorTop": "#fff",
+    "usingComponents": {
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "u-skeleton": "/components/common/u-skeleton/u-skeleton",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

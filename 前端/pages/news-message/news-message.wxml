@@ -1,0 +1,37 @@
+<view>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="80rpx" vueId="3fcee0a0-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <view class="flex justify-around align-end all-shadow nav">
+                <view bindtap="__e" class="pos" data-event-opts="{{[ [ 'tap',[ [ 'changeNum',[classIndex] ] ] ] ]}}" wx:for="{{classificationData}}" wx:for-index="classIndex" wx:for-item="classItem" wx:key="classIndex">
+                    <text class="{{['text-bold',num==classIndex?'text-black text-xl':'text-color-b2']}}">{{classItem}}</text>
+                    <view class="{{['bg-red round',interactTotal>0?'mail-c':'']}}" wx:if="{{classIndex==0}}"></view>
+                    <view class="{{['bg-red round',systemTotal>0?'mail-c':'']}}" wx:if="{{classIndex==1}}"></view>
+                </view>
+            </view>
+        </view>
+        <view slot="content">
+            <view bindtap="__e" class="flex margin-lr padding-tb-sm solid-bottom justify-between" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$0'],[ [ ['interaction','',index,'news_id'] ] ] ] ] ] ]}}" wx:if="{{num==0}}" wx:for="{{interaction}}" wx:key="index">
+                <view class="{{[item.news_image?'wid':'']}}">
+                    <bbs-head-name bind:__l="__l" pic="{{item.avatar}}" size="{{26}}" topKey="{{false}}" uid="{{item.uid}}" uname="{{item.uname}}" vueId="{{'3fcee0a0-2-'+index+','+'3fcee0a0-1'}}"></bbs-head-name>
+                    <view class="comm cu-chat">
+                        <view>
+                            <text class="{{[ 'margin-right-sm','cuIcon-'+(item.type==1?'appreciate':'fork') ]}}" style="color:#6E7B9D;" wx:if="{{item.type==1||item.type==4}}"></text>
+                            <text style="color:#858585;">{{''+(item.type==1?'赞了你的动态':item.type==2?'回复了'+(item.rname?item.rname+'：':'你：'):item.type==3?'评论了你：':item.type==4?'分享了你的动态':'')+''}}</text>
+                            <text wx:if="{{item.content}}">{{item.content}}</text>
+                        </view>
+                        <image catchtap="__e" class="margin-top-xs img" data-event-opts="{{[ [ 'tap',[ [ 'preImage',['$0'],[ [ ['interaction','',index,'image'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{item.image}}" wx:if="{{item.image}}"></image>
+                        <text class="text-xs text-color-b2 margin-top-xs">{{item.createtime}}</text>
+                    </view>
+                </view>
+                <image class="bbs-img" lazyLoad="{{true}}" mode="aspectFill" src="{{item.news_image}}" wx:if="{{item.news_image}}"></image>
+            </view>
+            <view class="cu-chat margin-lr padding-tb-sm solid-bottom" wx:if="{{num==1}}" wx:for="{{systemData}}" wx:for-index="systemindex" wx:for-item="systemItem" wx:key="systemindex">
+                <text class="text-black text-bold">{{systemItem.title}}</text>
+                <text class="margin-top-xs">{{systemItem.content}}</text>
+                <text class="text-xs text-color-b2 margin-top-xs">{{systemItem.createtime}}</text>
+            </view>
+            <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="{{'3fcee0a0-3'+','+'3fcee0a0-1'}}"></back-top>
+            <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="{{'3fcee0a0-4'+','+'3fcee0a0-1'}}"></uni-load-more>
+        </view>
+    </tui-sticky>
+</view>

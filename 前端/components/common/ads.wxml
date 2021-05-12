@@ -1,0 +1,3 @@
+<view class="{{['ad-style',isBottom?'is-bottom':'']}}" wx:if="{{plaidId}}">
+    <ad unitId="{{plaidId}}"></ad>
+</view>

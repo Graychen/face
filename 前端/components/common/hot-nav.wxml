@@ -1,0 +1,10 @@
+<view class="cu-bar bg-white padding-lr solid-bottom">
+    <view>
+        <text class="{{['lg text-red margin-right-xs','cuIcon-'+icon]}}"></text>
+        <text>{{title}}</text>
+    </view>
+    <view bindtap="__e" class="text-color-b2" data-event-opts="{{[ [ 'tap',[ [ 'clickMore',['$0','$1','$2'],['type','order','title'] ] ] ] ]}}" wx:if="{{more}}">
+        <text>查看更多</text>
+        <text class="lg cuIcon-right"></text>
+    </view>
+</view>

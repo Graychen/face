@@ -1,0 +1,9 @@
+<view class="padding-bottom">
+    <view class="margin-lr margin-top text-black" wx:for="{{data}}" wx:key="index">
+        <view class="text-bold text-xl">{{item.title}}</view>
+        <view class="flex margin-top-xs" style="line-height:45rpx;" wx:for="{{item.desc}}" wx:for-index="descIndex" wx:for-item="desc" wx:key="descIndex">
+            <text class="margin-right-xs" wx:if="{{item.desc.length!=1}}">{{descIndex+1+'.'}}</text>
+            <text>{{desc}}</text>
+        </view>
+    </view>
+</view>

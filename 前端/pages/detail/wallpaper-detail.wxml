@@ -1,0 +1,13 @@
+<view>
+    <left-capsule bind:__l="__l" vueId="865b1bd6-1"></left-capsule>
+    <wallpaper-pic NewHei="{{NewHei}}" adClick="{{adClick}}" bind:__l="__l" bind:changeLogin="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeLogin',[ ['changeLogin'] ] ] ]}}" resdata="{{initData}}" swiperShow="{{swiperShow}}" timeData="{{timeData}}" timeShow="{{timeShow}}" userInfo="{{userInfo}}" vueId="865b1bd6-2"></wallpaper-pic>
+    <up-pic bind:__l="__l" initData="{{initData}}" resdata="{{authorData}}" vueId="865b1bd6-3"></up-pic>
+    <ads bind:__l="__l" vueId="865b1bd6-4"></ads>
+    <hot-nav bind:__l="__l" icon="same" title="相关推荐" type="about" vueId="865b1bd6-5"></hot-nav>
+    <waterfall-flow bind:__l="__l" resdata="{{listData}}" vueId="865b1bd6-6"></waterfall-flow>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="865b1bd6-7"></uni-load-more>
+    <view style="{{'height:'+safeAreaBottom+'px'+';'}}"></view>
+    <wallpaper-btn adClick="{{adClick}}" bind:__l="__l" bind:changeIcon="__e" bind:changeLogin="__e" bind:videoAdShow="__e" btnMenu="{{btnMenu}}" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeIcon',[ ['changeIcon'] ] ],[ '^changeLogin',[ ['changeLogin'] ] ] ]}}" resdata="{{initData}}" safeAreaHeight="{{safeAreaHeight}}" userInfo="{{userInfo}}" vueId="865b1bd6-8"></wallpaper-btn>
+    <ads-video adType="{{2}}" bind:__l="__l" bind:addCommission="__e" bind:changeAd="__e" bind:updateUserInfo="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeAd',[ ['changeAd'] ] ],[ '^addCommission',[ ['addCommission'] ] ],[ '^updateUserInfo',[ ['updateUserInfo'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="865b1bd6-9"></ads-video>
+    <tui-modal bind:__l="__l" bind:click="__e" content="您还未登录，请先登录" data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}" maskClosable="{{false}}" show="{{showLogin}}" vueId="865b1bd6-10"></tui-modal>
+</view>

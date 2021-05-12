@@ -1,0 +1,50 @@
+.close {
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    color: #f5e4b4;
+    background-color: #b9b9b9;
+    border-radius: 100rpx;
+    position: absolute;
+    right: 8rpx;
+}
+
+.circle-small {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 10rpx;
+}
+
+.circle-big,.circle-small {
+    display: inline-block;
+    background-color: #000;
+}
+
+.circle-big {
+    width: 16rpx;
+    height: 16rpx;
+    margin: 0 6rpx;
+    border-radius: 16rpx;
+}
+
+.text-circle {
+    padding: 10rpx 15rpx;
+    margin: 0 10rpx;
+    border: 1rpx solid #b2b2b2;
+    border-radius: 25px;
+    background-color: #fde59c;
+}
+
+.all-tips {
+    border: 4rpx solid #eab314;
+    border-radius: 8rpx;
+    background-color: #f5e4b4;
+    position: relative;
+}
+
+.text-size {
+    font-size: 24rpx;
+    color: #997818;
+    white-space: nowrap;
+}

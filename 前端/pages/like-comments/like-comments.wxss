@@ -1,0 +1,27 @@
+page {
+    background-color: #fff;
+}
+
+.avatar {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.bbs {
+    height: 70rpx;
+    line-height: 70rpx;
+}
+
+.bbs .bbs-content {
+    width: 560rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.bbs .img {
+    width: 70rpx;
+    height: 70rpx;
+    border-top-right-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+}

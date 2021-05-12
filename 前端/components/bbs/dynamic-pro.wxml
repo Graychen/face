@@ -1,0 +1,35 @@
+<view>
+    <navigator class="radius-12" hoverClass="none" url="{{'/pages/dynamic-detail/dynamic-detail?id='+item.id}}" wx:for="{{resdata}}" wx:key="index">
+        <view class="padding solid-bottom cu-chat">
+            <view class="flex justify-between align-center">
+                <view class="flex align-center">
+                    <bbs-head-name bind:__l="__l" pic="{{item.avatar}}" uid="{{item.uid}}" uname="{{item.uname}}" vueId="{{'4e7ecdae-1-'+index}}"></bbs-head-name>
+                    <view class="{{['margin-left radius text-sm padding-lr-xs status',item.status=='audited'?'status-audited':'status-hidden']}}" wx:if="{{userInfo&&(item.status=='audited'||item.status=='hidden')&&(userInfo.id==item.uid||item.is_admin)}}">{{''+(item.status=='audited'?'待审核':'未通过')+''}}</view>
+                </view>
+                <open-menu bind:__l="__l" bind:delBbs="__e" data-event-opts="{{[ [ '^delBbs',[ ['delBbs'] ] ] ]}}" index="{{index}}" is_admin="{{item.is_admin}}" sid="{{item.id}}" status="{{item.status}}" uid="{{item.uid}}" vueId="{{'4e7ecdae-2-'+index}}"></open-menu>
+            </view>
+            <view class="item-content">
+                <text-shrink bind:__l="__l" hideEllips="{{true}}" line="{{5}}" size="{{32}}" text="{{item.content}}" vueId="{{'4e7ecdae-3-'+index}}" wx:if="{{item.content}}"></text-shrink>
+                <bbs-pic bind:__l="__l" resdata="{{item.images}}" vueId="{{'4e7ecdae-4-'+index}}" wx:if="{{item.images.length}}"></bbs-pic>
+                <topic bind:__l="__l" resdata="{{item.topic}}" vueId="{{'4e7ecdae-5-'+index}}" wx:if="{{item.topic.length}}"></topic>
+                <view class="text-color-b2 text-sm margin-top-sm">{{item.createtime}}</view>
+                <view class="flex justify-between align-center padding-top-sm comments">
+                    <view>
+                        <text class="text-bold">评论</text>
+                        <text>{{'('+item.commentnum+')'}}</text>
+                    </view>
+                    <view class="flex">
+                        <button catchtap="__e" class="cu-btn" data-content="{{item.content}}" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" data-id="{{item.id}}" data-images="{{item.images}}" data-index="{{index}}" openType="share">
+                            <text class="margin-right-xs">{{item.share}}</text>
+                            <text class="cuIcon-share"></text>
+                        </button>
+                        <view catchtap="__e" class="padding-left-sm" data-event-opts="{{[ [ 'tap',[ [ 'like',[index] ] ] ] ]}}">
+                            <text class="margin-right-xs">{{item.like}}</text>
+                            <text class="{{[ 'cuIcon-appreciate'+(item.is_like?'fill':'') ]}}"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </navigator>
+</view>

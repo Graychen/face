@@ -1,0 +1,18 @@
+<view>
+    <view class="margin-lr margin-top text-color-b2">请选择举报投诉的理由</view>
+    <view class="margin margin-top-sm">
+        <radio-group bindchange="__e" class="block" data-event-opts="{{[ [ 'change',[ [ 'RadioChange',['$event'] ] ] ] ]}}">
+            <label class="cu-form-group" wx:for="{{reportPro}}" wx:key="index">
+                <view class="title">{{item.title}}</view>
+                <radio checked="{{radio==item.radio?true:false}}" class="{{['blue radio',radio==item.radio?'checked':'']}}" value="{{item.radio}}"></radio>
+            </label>
+        </radio-group>
+        <view class="margin-top text-color-b2">填写其他原因</view>
+        <view class="cu-form-group margin-top-sm radius-12">
+            <textarea bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'textareaAInput',['$event'] ] ] ] ]}}" maxlength="300" placeholder="请填写您举报投诉的理由"></textarea>
+        </view>
+    </view>
+    <view class="padding flex justify-center align-center">
+        <button bindtap="__e" class="cu-btn bg-yellow lg shadow round" data-event-opts="{{[ [ 'tap',[ [ 'clickButton',['$event'] ] ] ] ]}}">确认举报投诉</button>
+    </view>
+</view>

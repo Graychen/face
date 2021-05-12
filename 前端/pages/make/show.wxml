@@ -1,0 +1,4 @@
+<view bindtap="__e" class="show-page" data-event-opts="{{[ [ 'tap',[ [ 'previewBack',['$event'] ] ] ] ]}}">
+    <image class="show-src" lazyLoad="{{true}}" mode="widthFix" src="{{arr[0]}}"></image>
+    <image class="show-tips" lazyLoad="{{true}}" mode="widthFix" src="{{imgurl}}"></image>
+</view>

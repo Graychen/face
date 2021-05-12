@@ -1,0 +1,49 @@
+<view class="margin-top">
+    <view class="cu-form-group">
+        <view class="title">标题</view>
+        <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ 'inputTitle',['$event'] ] ] ] ]}}" name="input" placeholder="请输入标题"></input>
+    </view>
+    <view class="cu-form-group margin-top">
+        <view class="title">上传类型</view>
+        <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'PickerChange',['$event'] ] ] ] ]}}" range="{{picker}}" value="{{index}}">
+            <view class="picker">{{''+picker[index]+''}}</view>
+        </picker>
+    </view>
+    <view class="cu-form-group margin-top" wx:if="{{navShow}}">
+        <view class="title">上传分类</view>
+        <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'NavChange',['$event'] ] ] ] ]}}" range="{{Navs}}" value="{{navKey}}">
+            <view class="picker">{{''+Navs[navKey]+''}}</view>
+        </picker>
+    </view>
+    <view class="cu-bar bg-white margin-top">
+        <view class="action">图片上传</view>
+        <view class="action">{{''+imgList.length+'/1'}}</view>
+    </view>
+    <view class="cu-form-group">
+        <view class="grid col-4 grid-square flex-sub">
+            <view bindtap="__e" class="bg-img" data-event-opts="{{[ [ 'tap',[ [ 'ViewImage',['$event'] ] ] ] ]}}" data-url="{{imgList[index]}}" wx:for="{{imgList}}" wx:key="index">
+                <image lazyLoad="{{true}}" mode="aspectFill" src="{{imgList[index]}}"></image>
+                <view catchtap="__e" class="cu-tag bg-red" data-event-opts="{{[ [ 'tap',[ [ 'DelImg',['$event'] ] ] ] ]}}" data-index="{{index}}">
+                    <text class="cuIcon-close"></text>
+                </view>
+            </view>
+            <view bindtap="__e" class="solids" data-event-opts="{{[ [ 'tap',[ [ 'ChooseImage',['$event'] ] ] ] ]}}" wx:if="{{imgList.length<1}}">
+                <text class="cuIcon-cameraadd"></text>
+            </view>
+        </view>
+    </view>
+    <view class="padding flex justify-center margin-top-lg">
+        <button bindtap="__e" class="cu-btn bg-yellow round lg shadow padding-lr-lg" data-event-opts="{{[ [ 'tap',[ [ 'upLoad',['$event'] ] ] ] ]}}">上传表情</button>
+    </view>
+    <view class="cu-chat text-color-b2 margin-lr" style="line-height:45rpx;">
+        <text class="text-bold">友情提示：</text>
+        <view class="flex margin-top-xs" wx:if="{{IsAdVideo}}">
+            <view>
+                <text class="margin-left-xs">内容被他人成功下载、保存后奖励</text>
+                <text class="margin-left-xs text-red text-bold">0.5积分</text>。</view>
+        </view>
+        <view class="flex margin-top-xs">
+            <text class="margin-left-xs">发表的内容经过人工审核确认无任何色情、低俗、暴力、政治、违法等令人不适的内容后方可显示。</text>
+        </view>
+    </view>
+</view>

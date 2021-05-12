@@ -1,0 +1,8 @@
+page {
+    background-color: #fff;
+}
+
+view {
+    margin-bottom: 30rpx;
+    line-height: 45rpx;
+}

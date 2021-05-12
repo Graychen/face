@@ -1,0 +1,30 @@
+<view>
+    <view catchtap="__e" class="flex justify-center align-center page-all" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{popupKey}}">
+        <view catchtap="__e" class="cu-chat justify-center align-center popup-content" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <view class="flex justify-center content-img">
+                <image id="img" lazyLoad="{{true}}" mode="widthFix" src="{{imgInfo.src}}" style="width:500rpx;"></image>
+                <text class="pop-text">{{makeText}}</text>
+            </view>
+            <text class="integral">{{'制作表情需消耗1积分 当前积分：'+score}}</text>
+            <view class="flex justify-around padding-top" style="width:570rpx;">
+                <view catchtap="__e" class="cu-chat align-center" data-event-opts="{{[ [ 'tap',[ [ 'addText',['$event'] ] ] ] ]}}">
+                    <text class="margin-bottom-xs cuIcon-font btn-item"></text>
+                    <text>改字</text>
+                </view>
+                <view catchtap="__e" class="cu-chat align-center" data-event-opts="{{[ [ 'tap',[ ['make'] ] ] ]}}">
+                    <text class="margin-bottom-xs cuIcon-forward btn-item"></text>
+                    <text>保存</text>
+                </view>
+                <button class="cu-btn cu-chat align-center btn" openType="share">
+                    <text class="cuIcon-appreciate btn-item" style="margin-bottom:22rpx;"></text>
+                    <text style="font-size:28rpx;color:#333333;">推荐</text>
+                </button>
+                <view catchtap="__e" class="cu-chat align-center" data-event-opts="{{[ [ 'tap',[ [ 'videoAdShow',['$event'] ] ] ] ]}}">
+                    <text class="margin-bottom-xs cuIcon-video btn-item"></text>
+                    <text>赚积分</text>
+                </view>
+            </view>
+            <text catchtap="__e" class="cuIcon-close btn-close" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"></text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,30 @@
+<view>
+    <view class="bg-white margin flex justify-between align-center padding-lr radius-12 all-shadow padding-tb-sm">
+        <view class="flex align-center">
+            <image class="pay-img" lazyLoad="{{true}}" mode="aspectFill" src="/static/images/pay/WeChat.png"></image>
+            <text class="margin-left text-color-b2">提现到微信零钱</text>
+        </view>
+        <text class="text-red cuIcon-roundcheckfill" style="font-size:50rpx;"></text>
+    </view>
+    <view class="cu-bar search bg-white">
+        <view class="search-form radius-12 padding-lr">
+            <input adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'focus',[ [ 'InputFocus',['$event'] ] ] ],[ 'blur',[ [ 'InputBlur',['$event'] ] ] ],[ 'input',[ [ 'InputChange',['$event'] ] ] ] ]}}" placeholder="请输入要提现金额" type="number"></input>
+        </view>
+    </view>
+    <view class="margin-lr text-sm">{{'当前可提现 '+score+' 积分 ≈ '+money+' 元'}}</view>
+    <view bindtap="__e" class="margin round bg-yellow padding-tb-sm text-xl flex justify-center align-center text-black" data-event-opts="{{[ [ 'tap',[ [ 'CashWithdrawal',['$event'] ] ] ] ]}}">确认提现</view>
+    <view class="margin-lr">
+        <view>
+            <text>1. 最低提现金额为1元起；</text>
+        </view>
+        <view class="margin-top-xs">
+            <text>2. 提现审核时间为1-3个工作日处理；</text>
+        </view>
+        <view class="margin-top-xs">
+            <text>3. 发起提现后，提现金额会到微信的零钱；</text>
+        </view>
+        <view class="margin-top-xs">
+            <text>4. 提现金额必须为整数，如提现1元，2元，3元；</text>
+        </view>
+    </view>
+</view>

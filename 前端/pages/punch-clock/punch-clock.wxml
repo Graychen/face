@@ -1,0 +1,122 @@
+<view class="cu-chat align-center">
+    <view class="round text-red padding-lr-sm tips-time">
+        <text class="cuIcon-remind"></text>
+        <text class="margin-lr-xs">05:00-10:00</text>
+        <text class="text-white">打卡，瓜分积分</text>
+    </view>
+    <view class="margin-bottom punch">
+        <view class="margin-top radius-12 cu-chat align-center padding-bottom punch-content">
+            <text class="margin-top text-black">今日总累积积分</text>
+            <text class="text-red text-sl text-bold margin-top-sm">{{punchData.total}}</text>
+            <view class="flex align-center margin-top-xs text-sm" wx:if="{{!punchData.status}}">
+                <text>距离报名截止时间还有</text>
+                <text class="end-time">{{endTime.hours}}</text>:<text class="end-time">{{endTime.minutes}}</text>:<text class="end-time">{{endTime.seconds}}</text>
+            </view>
+            <view class="flex align-center margin-top-xs text-sm" wx:if="{{punchData.status&&!endTime.type}}">
+                <text>预估积分：</text>
+                <text class="text-red">{{punchData.score}}</text>
+                <text>积分</text>
+            </view>
+            <view class="text-green" wx:if="{{endTime.type}}">
+                <text class="cuIcon-friendfill"></text>
+                <text class="margin-lr-xs">{{punchData.total}}</text>
+                <text class="text-black">人已参加报名</text>
+            </view>
+            <view class="text-green" wx:if="{{punchData.status&&!endTime.type}}">
+                <text class="text-color-b2">已有</text>
+                <text class="margin-lr-xs">{{punchData.dknum}}</text>
+                <text class="text-color-b2">人成功打卡</text>
+            </view>
+            <view bindtap="__e" class="margin-top round center btn" data-event-opts="{{[ [ 'tap',[ [ 'join',['$event'] ] ] ] ]}}">
+                <view class="round center text-xl text-bold btn-content">
+                    <view class="center" wx:if="{{!punchData.status}}">
+                        <block wx:if="{{IsAdVideo}}">
+                            <text class="cuIcon-video margin-right-xs"></text>
+                            <text>看视频免费报名</text>
+                        </block>
+                        <text wx:else>立即参与打卡</text>
+                    </view>
+                    <view class="flex align-center" wx:if="{{punchData.status}}">
+                        <text class="{{[endTime.type?'margin-right-xs':'']}}">{{endTime.type?'打卡倒计时':'立即打卡（'}}</text>
+                        <text>{{endTime.hours}}</text>:<text>{{endTime.minutes}}</text>:<text>{{endTime.seconds}}</text>
+                        <text>{{endTime.type?'':'结束）'}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="text-color-b2 margin-top-sm" wx:if="{{!punchData.status}}">
+                <text>{{(IsAdVideo?'免费':'积分')+'报名，打卡成功后瓜分得≥1积分'}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="margin-bottom padding-tb all-shadow center cu-chat text-black course radius-12">
+        <view class="flex align-center">
+            <image class="icon-img" lazyLoad="{{true}}" mode="widthFix" src="/static/images/other/left.png"></image>
+            <text class="text-bold text-lg margin-lr">{{courseData.title}}</text>
+            <image class="icon-img" lazyLoad="{{true}}" mode="widthFix" src="/static/images/other/right.png"></image>
+        </view>
+        <view class="margin-top flex justify-around w-100 padding-lr-xs">
+            <block wx:for="{{courseData.data}}" wx:key="index">
+                <view class="cu-chat justify-center align-center">
+                    <image class="round icon-pic" lazyLoad="{{true}}" mode="aspectFill" src="{{item.imgUrl}}"></image>
+                    <text class="margin-top-sm">{{item.name}}</text>
+                    <text class="margin-top-xs text-xs text-color-b2">{{item.desc}}</text>
+                </view>
+                <text class="cuIcon-right margin-top text-bold line" wx:if="{{index!=2}}"></text>
+            </block>
+        </view>
+    </view>
+    <view class="margin-bottom padding-tb all-shadow center cu-chat text-black course radius-12">
+        <view class="flex align-center">
+            <image class="icon-img" lazyLoad="{{true}}" mode="widthFix" src="/static/images/other/left.png"></image>
+            <text class="text-bold text-lg margin-lr">打卡战况</text>
+            <image class="icon-img" lazyLoad="{{true}}" mode="widthFix" src="/static/images/other/right.png"></image>
+        </view>
+        <view class="margin-top flex justify-around w-100 padding-lr-xs">
+            <view class="cu-chat justify-center align-center star-item" wx:for="{{punchData.detail}}" wx:key="index">
+                <view class="relative">
+                    <image class="round icon-pic" lazyLoad="{{true}}" mode="aspectFill" src="{{item.avatar}}"></image>
+                    <view class="{{['text-xs punch-star',index]}}">{{item.title}}</view>
+                </view>
+                <text class="margin-top-sm text-xs star-name">{{item.uname?item.uname:'虚位以待'}}</text>
+                <text class="margin-top-xs" wx:if="{{index=='early'&&item.value}}">{{item.value+'打卡'}}</text>
+                <block wx:else>
+                    <text class="margin-top-xs" wx:if="{{index=='will'&&item.value}}">{{'连续'+item.value+'天'}}</text>
+                    <text class="margin-top-xs" wx:else>-</text>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="fixed center cu-chat hidden text-sm rule">
+        <navigator class="center cu-chat padding-xs bg-gradual-green" hoverClass="none" hoverStopPropagation="{{true}}" url="/pages/punch-clock/rule/rule">
+            <text>活动</text>
+            <text>规则</text>
+        </navigator>
+        <navigator class="center cu-chat padding-xs bg-yellow" hoverClass="none" hoverStopPropagation="{{true}}" url="/pages/punch-clock/record/record">
+            <text>我的</text>
+            <text>战绩</text>
+        </navigator>
+    </view>
+    <view bindtap="__e" class="full-fixed" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{popupKey}}">
+        <view catchtap="__e" class="bg-white radius-12 center cu-chat relative padding-tb" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" style="width:80vw;">
+            <image lazyLoad="{{true}}" mode="widthFix" src="/static/images/other/join_success.png" style="width:170rpx;"></image>
+            <text class="text-xl margin-top text-black text-bold">报名成功</text>
+            <text class="margin-top-sm">记得明早05:00-10:00来打卡瓜分积分哦~</text>
+            <view bindtap="__e" class="padding-tb-sm round bg-yellow center margin-top-lg" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" style="width:50vw;">我知道了</view>
+            <view bindtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+                <text class="cuIcon-close text-white"></text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="full-fixed" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{punchKey}}">
+        <view catchtap="__e" class="bg-white radius-12 center cu-chat relative padding-tb" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" style="width:80vw;">
+            <image lazyLoad="{{true}}" mode="widthFix" src="/static/images/other/join_success.png" style="width:170rpx;"></image>
+            <text class="text-xl margin-top text-black text-bold">打卡成功</text>
+            <text class="margin-top-sm">活动结束后，积分将在今日12点发放到账户</text>
+            <view bindtap="__e" class="padding-tb-sm round bg-yellow center margin-top-lg" data-event-opts="{{[ [ 'tap',[ [ 'join',['$event'] ] ] ] ]}}" style="width:50vw;">继续报名</view>
+            <view bindtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+                <text class="cuIcon-close text-white"></text>
+            </view>
+        </view>
+    </view>
+    <ads-video adType="{{5}}" bind:__l="__l" bind:changeClock="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeClock',[ ['changeClock'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="1e760f40-1"></ads-video>
+</view>

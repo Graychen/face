@@ -1,0 +1,16 @@
+<view class="padding-lr center cu-chat">
+    <view class="center cu-chat" wx:for="{{data}}" wx:key="index">
+        <view class="flex margin-tb">{{''+index+1+'.'}}<text class="flex-1 margin-left-xs">{{item.text}}</text>
+        </view>
+        <image class="img-box-shadow" lazyLoad="{{true}}" mode="widthFix" src="{{'https://cdn.hotemoji.cn/wxapp/image/'+item.src}}" wx:if="{{item.src}}"></image>
+        <view class="margin-left center cu-chat" wx:if="{{index==2}}">
+            <view class="flex margin-tb">3.1:<text class="flex-1 margin-left-xs">如果您保存的是图片，且想添加到表情收藏夹，第一步：打开表情包收藏夹，点击"添加单个表情"按钮；</text>
+            </view>
+            <image class="img-box-shadow" lazyLoad="{{true}}" mode="widthFix" src="https://cdn.hotemoji.cn/wxapp/1.png"></image>
+            <view class="flex margin-tb">3.2:<text class="flex-1 margin-left-xs">第二步：在弹出的新页面中点击" + "即可添加表情包了</text>
+            </view>
+            <image class="img-box-shadow" lazyLoad="{{true}}" mode="widthFix" src="https://cdn.hotemoji.cn/wxapp/2.png"></image>
+        </view>
+    </view>
+    <button bindtap="__e" class="cu-btn bg-yellow round lg shadow margin-bottom-xl margin-top-sm" data-event-opts="{{[ [ 'tap',[ [ 'btnBack',['$event'] ] ] ] ]}}">我知道了</button>
+</view>

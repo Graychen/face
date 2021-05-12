@@ -1,0 +1,12 @@
+<view>
+    <view class="flex justify-between align-center padding-lr-lg padding-top padding-bottom bg-white margin-bottom-sm">
+        <view class="flex align-center">
+            <image lazyLoad="{{true}}" mode="aspectFill" src="{{resdata.avatar?resdata.avatar:'https://cdn.hotemoji.cn/uploads/20200420/b35a8a73258cbf8594379b6bec12fc9e.jpg'}}" style="width:100rpx;height:100rpx;border-radius:100px;margin-right:20rpx;"></image>
+            <text class="text-lg">{{resdata.nickname?resdata.nickname:'表情君'}}</text>
+        </view>
+        <view bindtap="__e" class="text-color-b2" data-event-opts="{{[ [ 'tap',[ [ 'report',['$0'],['initData.id'] ] ] ] ]}}">
+            <text class="cuIcon-warn margin-right-xs"></text>
+            <text>举报</text>
+        </view>
+    </view>
+</view>

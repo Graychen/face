@@ -1,0 +1,7 @@
+<view class="{{['tui-tips-box',fixed?'tui-tips-fixed':'']}}">
+    <image class="tui-tips-icon" src="{{imgUrl}}" style="{{'width:'+imgWidth+'rpx'+';'+'height:'+imgHeight+'rpx'+';'}}"></image>
+    <view class="tui-tips-content">
+        <slot></slot>
+    </view>
+    <button bindtap="__e" class="tui-tips-btn" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" hoverClass="tui-tips-btn-hover" style="{{'width:'+btnWidth+'rpx'+';'}}" wx:if="{{btnText}}">{{btnText}}</button>
+</view>

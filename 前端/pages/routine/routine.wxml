@@ -1,0 +1,14 @@
+<view>
+    <view class="bg-white margin-bottom-sm">
+        <navigator hoverClass="none" url="{{'/pages/routine-details/routine-details?id='+item.id+'&title='+item.name+'套路表情包'}}" wx:for="{{groupList}}" wx:key="index">
+            <view class="flex flex-nowrap align-center margin-lr padding-tb-sm solid-bottom">
+                <image class="border" lazyLoad="{{true}}" mode="aspectFill" src="{{item.image}}"></image>
+                <view class="cu-chat margin-left flex-1">
+                    <text class="text-black text-lg margin-bottom-xs">{{item.name}}</text>
+                    <text class="text-color-b2">{{item.desc}}</text>
+                </view>
+            </view>
+        </navigator>
+    </view>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="5b47d714-1"></uni-load-more>
+</view>

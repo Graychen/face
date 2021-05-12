@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我的收藏",
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fbbd08",
+    "usingComponents": {
+        "waterfall-flow": "/components/detail/waterfall-flow",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

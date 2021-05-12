@@ -1,0 +1,8 @@
+<view class="flex flex-wrap text-color-b2">
+    <navigator catchtap="__e" class="bg-f5 radius-12 topic" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" url="{{'/pages/topic-details/topic-details?id='+item.id}}" wx:for="{{resdata}}" wx:key="id">
+        <text class="margin-right-xs">#</text>{{item.name+''}}</navigator>
+    <navigator catchtap="__e" class="bg-f5 radius-12 topic" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" url="/pages/more-topic/more-topic" wx:if="{{all_show}}">
+        <text class="margin-right-xs">全部</text>
+        <text class="cuIcon-more"></text>
+    </navigator>
+</view>

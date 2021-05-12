@@ -1,0 +1,3 @@
+<view>
+    <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'open',['$event'] ] ] ] ]}}">私有表情</view>
+</view>

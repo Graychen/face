@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "热门壁纸",
+    "navigationBarBackgroundColor": "#fbbd08",
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "search-home": "/components/detail/search-home",
+        "waterfall-flow": "/components/detail/waterfall-flow",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

@@ -1,0 +1,103 @@
+page {
+    background-color: #fbbd08;
+}
+
+.page-all {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.sanjiao {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -40rpx;
+    border-left: 50rpx solid transparent;
+    border-right: 50rpx solid transparent;
+    border-bottom: 50rpx solid #000;
+}
+
+.circle-small {
+    width: 10rpx;
+    height: 10rpx;
+    border-radius: 10rpx;
+}
+
+.circle-big,.circle-small {
+    display: inline-block;
+    background-color: #000;
+}
+
+.circle-big {
+    width: 16rpx;
+    height: 16rpx;
+    margin: 0 6rpx;
+    border-radius: 16rpx;
+}
+
+.public-arrow {
+    width: 60rpx;
+    height: 70rpx;
+    position: absolute;
+    top: 70rpx;
+    right: 100rpx;
+    background-color: #000;
+    border-radius: 8rpx;
+}
+
+.arrow-text {
+    width: 40rpx;
+    text-align: center;
+    margin-top: -20rpx;
+    z-index: 10;
+}
+
+.content-all {
+    width: 600rpx;
+    background-color: #fff;
+    border-radius: 12rpx;
+    box-shadow: 0 0 30rpx 0 rgba(0,0,0,.1);
+    opacity: .8;
+}
+
+.follow-hot {
+    font-size: 40rpx;
+    color: #000;
+    font-weight: 700;
+    padding: 10rpx 0;
+    margin-bottom: 30rpx;
+}
+
+.follow-name {
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    padding: 0 100rpx;
+    border-radius: 12rpx;
+    box-shadow: 0 0 10rpx 0 #fbbd08;
+    background-color: #fff;
+    z-index: 2;
+}
+
+.follow-name-text {
+    font-size: 34rpx;
+    color: #000;
+}
+
+.add-pro {
+    padding: 20rpx 46rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 0 10rpx 0 #fbbd08;
+    opacity: .5;
+    z-index: 1;
+}
+
+.circle-sign {
+    border-radius: 25px;
+    padding: 10rpx 15rpx;
+    margin: 0 10rpx;
+    background-color: #fde59c;
+}

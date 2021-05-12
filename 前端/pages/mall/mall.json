@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "精选商城",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColorTop": "#fff",
+    "usingComponents": {
+        "tui-sticky": "/components/common/sticky",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "u-skeleton": "/components/common/u-skeleton/u-skeleton",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

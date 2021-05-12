@@ -1,0 +1,12 @@
+<view class="bg-white padding-lr flex-direction padding-top-sm margin-bottom-sm">
+    <view class="flex justify-around">
+        <view bindtap="__e" class="cu-chat align-center padding-xs padding-bottom" data-event-opts="{{[ [ 'tap',[ [ 'clickNavs',['$0','$1','$2'],[ [ ['resdata.navs','',index,'nickname'] ],[ ['resdata.navs','',index,'flag'] ],[ ['resdata.navs','',index,'desc'] ] ] ] ] ] ]}}" wx:for="{{resdata.navs}}" wx:for-item="navs" wx:key="index">
+            <image class="shadow" mode="aspectFill" src="{{navs.image}}"></image>
+            <text style="color:#000;">{{navs.name}}</text>
+        </view>
+        <view class="{{['cu-load',!isLoad?'loading':'over']}}" wx:if="{{!resdata.navs.length}}"></view>
+    </view>
+    <view class="flex justify-around banner" wx:if="{{resdata.navsBanner.length}}">
+        <image bindtap="__e" class="bottom-img-size" data-event-opts="{{[ [ 'tap',[ [ 'clickNavs',['$0','$1','$2'],[ [ ['resdata.navsBanner','',index,'nickname'] ],[ ['resdata.navsBanner','',index,'flag'] ],[ ['resdata.navsBanner','',index,'desc'] ] ] ] ] ] ]}}" mode="widthFix" src="{{item.image}}" wx:for="{{resdata.navsBanner}}" wx:key="index"></image>
+    </view>
+</view>

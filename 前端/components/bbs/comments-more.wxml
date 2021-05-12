@@ -1,0 +1,23 @@
+<view>
+    <view class="flex justify-between padding-tb-xs" wx:for="{{changeData}}" wx:key="index">
+        <view>
+            <view class="flex back-name">
+                <bbs-head-name bind:__l="__l" size="{{26}}" uid="{{item.uid}}" uname="{{item.uname}}" vueId="{{'0763e042-1-'+index}}"></bbs-head-name>
+                <view class="flex align-center" wx:if="{{item.pid!=pid}}">
+                    <text style="margin:0 6rpx;">回复</text>
+                    <bbs-head-name bind:__l="__l" size="{{26}}" uid="{{item.rid}}" uname="{{item.rname}}" vueId="{{'0763e042-2-'+index}}"></bbs-head-name>
+                </view>：</view>
+            <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'openinput',['$0','$1','$2','$3'],[ [ ['changeData','',index,'id'] ],[ ['changeData','',index,'uid'] ],[ ['changeData','',index,'uname'] ],'pid' ] ] ] ] ]}}" style="line-height:40rpx;">{{item.content}}</text>
+            <image catchtap="__e" class="content-img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['changeData','',index,'image'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill	" src="{{item.image}}" wx:if="{{item.image}}"></image>
+            <view class="flex margin-top-xs align-center">
+                <view catchtap="__e" class="flex align-center" data-event-opts="{{[ [ 'tap',[ [ 'openinput',['$0','$1','$2','$3'],[ [ ['changeData','',index,'id'] ],[ ['changeData','',index,'uid'] ],[ ['changeData','',index,'uname'] ],'pid' ] ] ] ] ]}}">
+                    <view class="bg-f5 text-xs round" style="padding:6rpx 14rpx;color:#999;">回复</view>
+                    <view class="text-xs text-color-b2 margin-left">{{item.createtime}}</view>
+                </view>
+                <view class="flex-1"></view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="flex align-center text-color-b2" data-event-opts="{{[ [ 'tap',[ [ 'openMore',['$event'] ] ] ] ]}}" wx:if="{{resdata.length>1&&show}}">{{'展开'+resdata.length-1}}<text class="cuIcon-unfold margin-left-xs"></text>
+    </view>
+</view>

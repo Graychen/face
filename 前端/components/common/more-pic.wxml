@@ -1,0 +1,17 @@
+<view>
+    <view class="{{['bg-white flex flex-wrap more-pl',resdata.length?'padding-top-sm':'']}}">
+        <navigator bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'make',['$0'],[ [ ['resdata','',index,'id'] ] ] ] ] ] ]}}" hoverClass="none" url="{{pageType=='make'?false:'/pages/detail/Image-details?id='+item.id}}" wx:for="{{resdata}}" wx:key="index">
+            <view class="cu-chat padding-bottom-sm align-center item-pos">
+                <image class="border" lazyLoad="{{true}}" mode="aspectFill" src="{{item.src}}"></image>
+                <text class="text-active" wx:if="{{makeText}}">{{makeText}}</text>
+                <text class="desc-hidden">{{item.title}}</text>
+            </view>
+        </navigator>
+        <view class="{{['cu-load',!isLoad?'loading':'over']}}" style="width:690rpx;text-align:center;" wx:if="{{!resdata.length&&!noThingKey}}"></view>
+    </view>
+    <view class="cu-chat justify-center align-center nothing text-color-b2" wx:if="{{noThingKey}}">
+        <image lazyLoad="{{true}}" mode="widthFix" src="/static/images/search/nothing.png" style="width:500rpx;"></image>
+        <text class="margin-top-sm">抱歉，暂无搜索结果</text>
+        <text class="margin-top-sm">净化网络，抵制低俗</text>
+    </view>
+</view>

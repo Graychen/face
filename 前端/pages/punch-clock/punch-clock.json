@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "早起打卡挑战赛",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#A5BFF0",
+    "backgroundColorTop": "#A5BFF0",
+    "usingComponents": {
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

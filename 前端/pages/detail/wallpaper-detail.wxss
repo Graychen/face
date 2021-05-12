@@ -1,0 +1,28 @@
+.border {
+    border: 1rpx solid #e0e0e0;
+    border-radius: 12rpx;
+}
+
+.border,.item-pos {
+    width: 215rpx;
+    height: 215rpx;
+    box-sizing: border-box;
+}
+
+.item-pos {
+    position: relative;
+    margin-right: 26.25rpx;
+    overflow: hidden;
+}
+
+.text-active {
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 30rpx;
+    font-weight: 700;
+    color: #000;
+}
+
+.more-pl {
+    padding-left: 26.24rpx;
+}

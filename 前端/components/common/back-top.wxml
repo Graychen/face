@@ -1,0 +1,3 @@
+<view>
+    <view bindtap="__e" class="cuIcon-top lg top" data-event-opts="{{[ [ 'tap',[ [ 'backTop',['$event'] ] ] ] ]}}" wx:if="{{scrollTop===true||scrollTop>999}}"></view>
+</view>

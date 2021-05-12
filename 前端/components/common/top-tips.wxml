@@ -1,0 +1,14 @@
+<view class="bg-yellow" wx:if="{{tipsKey}}">
+    <view class="margin-lr flex justify-between align-center padding-tb-xs padding-lr-xs all-tips">
+        <view class="flex">
+            <text class="text-size">喜欢棒棒糖表情包，点击上方</text>
+            <view class="flex justify-center align-center text-circle">
+                <text class="circle-small"></text>
+                <text class="circle-big"></text>
+                <text class="circle-small"></text>
+            </view>
+            <text class="text-size">添加到我的小程序吧！</text>
+        </view>
+        <text bindtap="__e" class="cuIcon-close margin-right-xs close" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"></text>
+    </view>
+</view>

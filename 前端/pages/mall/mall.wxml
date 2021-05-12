@@ -1,0 +1,50 @@
+<view class="u-skeleton">
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="100rpx" vueId="d71edf80-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <view class="{{['cu-bar search bg-white',openShadow]}}" wx:if="{{!isAudit}}">
+                <view class="search-form round u-skeleton-fillet">
+                    <text class="cuIcon-search"></text>
+                    <input adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'focus',[ [ 'InputFocus',['$event'] ] ] ],[ 'blur',[ [ 'InputBlur',['$event'] ] ] ],[ 'input',[ [ 'changeInput',['$event'] ] ] ] ]}}" placeholder="搜索你要的商品" type="text" value="{{inputVal}}"></input>
+                </view>
+                <view class="action u-skeleton-fillet">
+                    <button bindtap="__e" class="cu-btn bg-green shadow-blur round" data-event-opts="{{[ [ 'tap',[ [ 'sendSeach',['$event'] ] ] ] ]}}">搜索</button>
+                </view>
+            </view>
+        </view>
+        <view slot="content">
+            <view class="title u-skeleton-fillet">精选好物</view>
+            <block wx:for="{{$root.l0}}" wx:key="index">
+                <view bindtap="__e" class="padding-lr" data-event-opts="{{[ [ 'tap',[ [ 'toApp',['$0','$1'],[ [ ['data.data','',index,'goods_id'] ],[ ['data.data','',index,'discount_link'] ] ] ] ] ] ]}}">
+                    <view class="goods">
+                        <view class="goods-img u-skeleton-fillet">
+                            <image lazyLoad="{{true}}" mode="aspectFill" src="{{item[$orig].goods_img}}"></image>
+                        </view>
+                        <view class="goods-content">
+                            <view>
+                                <text class="goods-title u-skeleton-fillet">{{item[$orig].goods_name}}</text>
+                                <text class="goods-introduce u-skeleton-fillet">{{item[$orig].goods_content}}</text>
+                            </view>
+                            <view class="flex text-red justify-between align-end">
+                                <view class="u-skeleton-fillet">
+                                    <text class="text-xs text-bold">￥</text>
+                                    <text class="text-xl">{{item[$orig].coupon_price}}</text>
+                                </view>
+                                <view catchtap="__e" class="flex align-center u-skeleton-fillet is-like" data-event-opts="{{[ [ 'tap',[ [ 'isLike',['$0','$1',index],[ [ ['data.data','',index,'goods_id'] ],[ ['data.data','',index,'is_like'] ] ] ] ] ] ]}}">
+                                    <text class="{{[ 'icon','cuIcon-like'+(item[$orig].is_like?'fill':'') ]}}"></text>
+                                    <text>喜欢</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="deliver" wx:if="{{item.m0}}"></view>
+            </block>
+        </view>
+    </tui-sticky>
+    <view bindtap="__e" class="{{['favorite u-skeleton-circle',animation=='doing'?'animation-shake':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'Toggle',[true] ] ] ] ]}}">
+        <text class="cuIcon-likefill"></text>
+    </view>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{state.status}}" vueId="d71edf80-2"></uni-load-more>
+    <u-skeleton animation="{{true}}" bind:__l="__l" loading="{{state.loading}}" vueId="d71edf80-3"></u-skeleton>
+    <tui-modal bind:__l="__l" bind:click="__e" content="您还未登录，请先登录" data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}" maskClosable="{{false}}" show="{{showLogin}}" vueId="d71edf80-4"></tui-modal>
+</view>

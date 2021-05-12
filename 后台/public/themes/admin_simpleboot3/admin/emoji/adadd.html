@@ -1,0 +1,90 @@
+<include file="public@header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('emoji/ad')}">所有广告位</a></li>
+			<li class="active"><a href="{:url('emoji/adadd')}">添加广告</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('emoji/adPost')}">
+			<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">选择小程序<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="appid" id="input-type" >
+						<foreach name="wxapps" item="vo">
+						 <option value="{$key}">{$vo.name}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">激励广告<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-name" name="videoId">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">首页广告<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-name" name="interId">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">详情广告<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-name" name="plaidId">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">免费时间（1小时=3600）<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-name" name="time">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">广告提示<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-name" name="msg">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">开启广告<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="isVideo" id="input-type">
+						<foreach name="status" item="vo">
+						 <option value="{$key}">{$vo}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">开启付费<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="isPay" id="input-type">
+						<foreach name="status" item="vo">
+						 <option value="{$key}">{$vo}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">开启审计<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="isAudit" id="input-type">
+						<foreach name="status" item="vo">
+						 <option value="{$key}">{$vo}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-primary js-ajax-submit">{:lang('ADD')}</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<view>
+    <view class="bg-white routine-pic flex flex-wrap">
+        <navigator hoverClass="none" url="{{'/pages/detail/Image-details?id='+item.id}}" wx:for="{{list}}" wx:key="index">
+            <image class="border-pic" lazyLoad="{{true}}" mode="aspectFill" src="{{item.src}}"></image>
+        </navigator>
+    </view>
+    <ads bind:__l="__l" isBottom="{{true}}" vueId="8aeefe68-1"></ads>
+    <ads-video adType="{{2}}" bind:__l="__l" bind:addCommission="__e" bind:changeAd="__e" bind:updateUserInfo="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeAd',[ ['changeAd'] ] ],[ '^addCommission',[ ['addCommission'] ] ],[ '^updateUserInfo',[ ['updateUserInfo'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="8aeefe68-2"></ads-video>
+    <view class="flex justify-around btn-all">
+        <view bindtap="__e" class="btn-routine" data-event-opts="{{[ [ 'tap',[ [ 'pullDown',['$event'] ] ] ] ]}}">
+            <text class="cuIcon-pulldown margin-right-xs"></text>
+            <text>下载全部</text>
+        </view>
+        <button class="btn-routine" openType="share">
+            <text class="cuIcon-share margin-right-xs"></text>
+            <text>分享套路</text>
+        </button>
+    </view>
+    <tui-modal bind:__l="__l" bind:click="__e" content="您还未登录，请先登录" data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}" maskClosable="{{false}}" show="{{showLogin}}" vueId="8aeefe68-3"></tui-modal>
+</view>

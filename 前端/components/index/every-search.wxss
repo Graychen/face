@@ -1,0 +1,4 @@
+.hot-size {
+    width: 200rpx;
+    height: 70rpx;
+}

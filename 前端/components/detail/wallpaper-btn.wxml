@@ -1,0 +1,14 @@
+<view>
+    <view class="flex justify-around fun-all" style="{{'padding-bottom:'+safeAreaHeight+'px'+';'}}">
+        <view bindtap="__e" class="cu-chat align-center justify-center padding-lr fun-h" data-event-opts="{{[ [ 'tap',[ [ 'funBtn',['$0'],[ [ ['btnMenu','',index,'type'] ] ] ] ] ] ]}}" wx:for="{{btnMenu}}" wx:key="index">
+            <button class="but cu-chat justify-center align-center" openType="share" plain="{{true}}" wx:if="{{item.type==='appreciate'}}">
+                <view class="cuIcon-appreciate btn-icon"></view>
+                <text class="btn-text">推荐</text>
+            </button>
+            <block wx:else>
+                <text class="{{['fun-icon','cuIcon-'+item.type]}}"></text>
+                <text class="fun-text">{{item.title}}</text>
+            </block>
+        </view>
+    </view>
+</view>

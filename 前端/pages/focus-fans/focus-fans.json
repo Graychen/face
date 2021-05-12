@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FBBD08",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "tui-sticky": "/components/common/sticky",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

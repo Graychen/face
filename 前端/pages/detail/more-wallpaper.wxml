@@ -1,0 +1,17 @@
+<view>
+    <view class="all-shadow detail-top-position">
+        <ad-custom unit-id="adunit-05bab3e248d80615"></ad-custom>
+        <search-home bind:__l="__l" bind:searchValue="__e" data-event-opts="{{[ [ '^searchValue',[ ['searchValue'] ] ] ]}}" vueId="7dd3fef2-1"></search-home>
+        
+        <scroll-view class="bg-white nav" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+            <view bindtap="__e" class="{{['cu-item',index==TabCur?'text-yellow cur':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'tabSelect',[index,'$0'],[ [ ['categoryList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{categoryList}}" wx:key="index">{{''+item.name+''}}</view>
+        </scroll-view>
+    </view>
+
+    <view style="margin-top:350rpx;">
+        <waterfall-flow bind:__l="__l" clearKey="{{clearKey}}" resdata="{{listData}}" vueId="7dd3fef2-2"></waterfall-flow>
+        <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="7dd3fef2-3"></back-top>
+        <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="7dd3fef2-4"></uni-load-more>
+    </view>
+    
+</view>

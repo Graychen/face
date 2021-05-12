@@ -1,0 +1,13 @@
+<!-- <view class="bg-white margin-bottom-sm">
+    <hot-nav bind:__l="__l" icon="creativefill" more="查看更多" title="聊天套路" type="routine" vueId="54a3c6f2-1"></hot-nav>
+    <navigator hoverClass="none" url="{{'/pages/routine-details/routine-details?id='+item.id+'&title='+item.name+'套路表情包'}}" wx:for="{{resdata}}" wx:key="index">
+        <view class="flex flex-nowrap align-center margin-lr padding-tb-sm solid-bottom">
+            <image class="border" lazyLoad="{{true}}" mode="aspectFill" src="{{item.image}}"></image>
+            <view class="cu-chat margin-left flex-1">
+                <text class="text-black text-lg margin-bottom-xs">{{item.name}}</text>
+                <text class="text-color-b2">{{item.desc}}</text>
+            </view>
+        </view>
+    </navigator>
+    <view class="{{['cu-load',!isLoad?'loading':'over']}}" wx:if="{{!resdata.length}}"></view>
+</view> -->

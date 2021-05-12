@@ -1,0 +1,42 @@
+<view>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="80rpx" vueId="6a797b80-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <view class="flex justify-around align-center bg-white text-black all-shadow" style="height:80rpx;line-height:80rpx;">
+                <view bindtap="__e" class="{{['padding-lr',current==index+1?'text-bold text-red solid-border-bottom':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',[index+1] ] ] ] ]}}" wx:for="{{navs}}" wx:key="index">{{''+item+''}}</view>
+            </view>
+        </view>
+        <view slot="content">
+            <view bindtap="__e" class="padding-lr padding-tb-sm solid-bottom flex" data-event-opts="{{[ [ 'tap',[ [ 'toDetail',['$0','$1',dataIndex],[ [ ['listData','',dataIndex,'id'] ],[ ['listData','',dataIndex,'type'] ] ] ] ] ] ]}}" wx:for="{{listData}}" wx:for-index="dataIndex" wx:for-item="data" wx:key="dataIndex">
+                <view class="relative margin-right-sm">
+                    <image class="border" mode="aspectFill" src="{{data.src}}"></image>
+                    <view catchtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'del',['$0'],[ [ ['listData','',dataIndex,'id'] ] ] ] ] ] ]}}">
+                        <text class="cuIcon-delete"></text>
+                    </view>
+                </view>
+                <view class="cu-chat text-black flex-1">
+                    <view class="flex align-center line-hei">
+                        <text class="text-color-b2">名称：</text>
+                        <text class="title">{{data.title}}</text>
+                    </view>
+                    <view class="flex align-center line-hei">
+                        <text class="text-color-b2">状态：</text>
+                        <text class="{{[data.status=='normal'?'text-green':data.status=='hidden'?'text-red':'text-blue']}}">{{'审核'+(data.status=='normal'?'通过':data.status=='hidden'?'未通过':'中')}}</text>
+                    </view>
+                    <view class="flex align-center line-hei">
+                        <text class="text-color-b2">浏览：</text>
+                        <text>{{data.click+'次'}}</text>
+                    </view>
+                    <view class="flex align-center line-hei">
+                        <text class="text-color-b2">分享：</text>
+                        <text>{{data.share+'次'}}</text>
+                    </view>
+                    <view class="flex align-center line-hei">
+                        <text class="text-color-b2">时间：</text>
+                        <text>{{data.createtime}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </tui-sticky>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="6a797b80-2"></uni-load-more>
+</view>

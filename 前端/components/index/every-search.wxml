@@ -1,0 +1,22 @@
+<view class="bg-white padding-lr padding-tb-sm margin-bottom-sm">
+    <view class="flex justify-between text-color-b2">
+        <view>
+            <text class="lg text-red text-bold cuIcon-search"></text>
+            <text class="text-black text-bold text-df margin-left-xs">大家都在搜</text>
+        </view>
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'change',['$event'] ] ] ] ]}}">
+            <text class="text-color-b2 text-sm">换一换</text>
+        </view>
+    </view>
+    <view class="flex flex-wrap justify-around">
+        <navigator hoverClass="none" url="{{'/pages/detail/suit-code?key_word='+item}}" wx:for="{{resdata}}" wx:key="index">
+            <view class="flex justify-center align-center hot-size">
+                <view class="text-black">
+                    <text class="text-xs text-color-b2">#</text>{{''+item+''}}<text class="text-xs text-color-b2">#</text>
+                </view>
+                <text class="lg text-red text-bold cuIcon-hotfill margin-left-xs" wx:if="{{!index}}"></text>
+            </view>
+        </navigator>
+        <view class="{{['cu-load',!isLoad?'loading':'over']}}" style="width:690rpx;text-align:center;" wx:if="{{!resdata.length}}"></view>
+    </view>
+</view>

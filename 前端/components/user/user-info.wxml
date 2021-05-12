@@ -1,0 +1,27 @@
+<view>
+    <button bindtap="__e" class="cu-btn cu-chat bg-yellow" data-event-opts="{{[ [ 'tap',[ [ 'Login',['$event'] ] ] ] ]}}" openType="getUserInfo" wx:if="{{!userInfo}}">
+        <image class="user-pic" lazyLoad="{{true}}" mode="aspectFill" src="/static/images/user/no_avatar.jpg"></image>
+        <view class="radius-12 bg-white text-black margin-top-sm now-login">立即登录</view>
+    </button>
+    <view class="flex justify-between margin-lr-lg" wx:else>
+        <view class="flex justify-around">
+            <image class="user-pic" lazyLoad="{{true}}" mode="aspectFill" src="{{userInfo.avatar}}"></image>
+            <view class="cu-chat justify-around margin-left">
+                <view class="text-xl text-bold user-name">{{userInfo.nickname}}</view>
+                <!-- <view class="flex text-sm align-center">
+                    <view catchtap="__e" class="flex align-center padding-tb-xs padding-right" data-event-opts="{{[ [ 'tap',[ [ 'toPage',[1] ] ] ] ]}}">
+                        <text class="text-lg text-bold margin-right-xs">{{resdata.focus}}</text>关注</view>
+                    <view catchtap="__e" class="flex align-center padding-tb-xs padding-right" data-event-opts="{{[ [ 'tap',[ [ 'toPage',[2] ] ] ] ]}}">
+                        <text class="text-lg text-bold margin-right-xs">{{resdata.fans}}</text>粉丝</view>
+                </view> -->
+            </view>
+        </view>
+        <!-- <view class="flex align-center">
+            <view catchtap="__e" class="round padding-tb-xs padding-lr-lg bg-white margin-right text-sm sign" data-event-opts="{{[ [ 'tap',[ [ 'toTask',['$event'] ] ] ] ]}}">{{resdata.sign?'已签到':'签到'}}</view>
+            <view catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'message',['$event'] ] ] ] ]}}" style="position:relative;">
+                <text class="cuIcon-mail" style="font-size:50rpx;"></text>
+                <view class="bg-red round mail-c" wx:if="{{messageTotal>0}}"></view>
+            </view>
+        </view> -->
+    </view>
+</view>

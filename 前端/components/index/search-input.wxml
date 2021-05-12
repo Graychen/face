@@ -1,0 +1,23 @@
+<view style="font-size:0;position:relative;">
+    <image class="img-size" lazyLoad="{{true}}" mode="widthFix" src="/static/images/index.png"></image>
+    <view class="cu-bar search bg-yellow">
+        <view class="search-form round shadow-blur">
+            <view catchtap="__e" class="action padding-right-xs" data-event-opts="{{[ [ 'tap',[ [ 'clickHome',['$event'] ] ] ] ]}}">
+                <text style="font-size:26rpx;">{{typeVal==1?'表情':typeVal==2?'头像':'壁纸'}}</text>
+                <text class="cuIcon-triangledownfill text-color-b2 padding-left-xs text-center" style="width:15rpx;"></text>
+            </view>
+            <text class="divide"></text>
+            <text class="cuIcon-search"></text>
+            <input adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'focus',[ [ 'InputFocus',['$event'] ] ] ],[ 'blur',[ [ 'InputBlur',['$event'] ] ] ],[ 'input',[ [ 'InputChange',['$event'] ] ] ] ]}}" placeholder="搜索热词" type="text"></input>
+            <view bindtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'Search',['$event'] ] ] ] ]}}" style="margin-right:0;">
+                <button class="cu-btn round bg-gradual-green button-search">搜索</button>
+            </view>
+        </view>
+    </view>
+    <view class="radius-12 cu-chat box-shadow bg-white popup-all" wx:if="{{keys}}">
+        <view class="sanjiao"></view>
+        <text bindtap="__e" class="solid-bottom pic-type" data-event-opts="{{[ [ 'tap',[ [ 'choosetype',[1] ] ] ] ]}}">表情</text>
+        <text bindtap="__e" class="solid-bottom pic-type" data-event-opts="{{[ [ 'tap',[ [ 'choosetype',[2] ] ] ] ]}}">头像</text>
+        <text bindtap="__e" class="pic-type" data-event-opts="{{[ [ 'tap',[ [ 'choosetype',[3] ] ] ] ]}}">壁纸</text>
+    </view>
+</view>

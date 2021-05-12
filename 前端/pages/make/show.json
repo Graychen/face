@@ -1,0 +1,6 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

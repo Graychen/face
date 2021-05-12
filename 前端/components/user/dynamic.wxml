@@ -1,0 +1,18 @@
+<view class="padding-top flex justify-around">
+    <!-- <navigator class="cu-chat align-center" hoverClass="none" url="/pages/jump-author/jump-author">
+        <text class="text-bold text-lg">{{item.news?item.news:0}}</text>
+        <text class="text-xs margin-top-xs">动态</text>
+    </navigator>
+    <navigator class="cu-chat align-center" hoverClass="none" url="/pages/like-comments/like-comments">
+        <text class="text-bold text-lg">{{item.like?item.like:0}}</text>
+        <text class="text-xs margin-top-xs">点赞</text>
+    </navigator> -->
+    <navigator class="cu-chat align-center" hoverClass="none" url="/pages/collection/collection">
+        <text class="text-bold text-lg">{{item.collect?item.collect:0}}</text>
+        <text class="text-xs margin-top-xs">收藏</text>
+    </navigator>
+    <!-- <navigator class="cu-chat align-center" hoverClass="none" url="/pages/income-statement/income-statement">
+        <text class="text-bold text-lg">{{item.score?item.score:0}}</text>
+        <text class="text-xs margin-top-xs">积分</text>
+    </navigator> -->
+</view>

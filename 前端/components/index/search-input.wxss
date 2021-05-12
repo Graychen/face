@@ -1,0 +1,46 @@
+.popup-all {
+    height: 180rpx;
+    width: 150rpx;
+    font-size: 28rpx;
+    position: absolute;
+    bottom: -175rpx;
+    left: 30rpx;
+    z-index: 999;
+}
+
+.sanjiao {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -15rpx;
+    left: 60rpx;
+    border-left: 15rpx solid transparent;
+    border-right: 15rpx solid transparent;
+    border-bottom: 15rpx solid #fff;
+}
+
+.box-shadow {
+    box-shadow: 0 10rpx 20rpx 0 rgba(0,0,0,.2);
+}
+
+.divide {
+    width: 0;
+    height: 36rpx;
+    border-right: 1rpx solid #d9d9d9;
+}
+
+.cu-btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.img-size {
+    width: 750rpx;
+}
+
+.pic-type {
+    width: 150rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+}

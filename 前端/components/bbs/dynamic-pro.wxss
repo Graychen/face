@@ -1,0 +1,34 @@
+.cu-btn {
+    height: auto;
+    color: #455b8a;
+    padding: 0 20rpx!important;
+    -webkit-box-pack: unset;
+    justify-content: unset;
+    border-radius: unset;
+    background-color: transparent!important;
+}
+
+.item-content {
+    margin-left: 80rpx;
+    margin-top: 10rpx;
+}
+
+.comments {
+    font-size: 32rpx!important;
+    color: #455b8a;
+}
+
+.status {
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.status-hidden {
+    color: #333;
+    background-color: #ffcaca;
+}
+
+.status-audited {
+    color: #fff;
+    background-color: #f53737;
+}

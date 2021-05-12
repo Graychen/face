@@ -1,0 +1,26 @@
+<view>
+    <view class="bg-yellow" style="{{'padding-top:'+customBottom+'px'+';'}}">
+        <user-info bind:__l="__l" bind:setUserInfo="__e" data-event-opts="{{[ [ '^setUserInfo',[ ['setUserInfo'] ] ] ]}}" messageTotal="{{message.total}}" resdata="{{userData}}" userInfo="{{userInfo}}" vueId="380011e0-1"></user-info>
+        <dynamic bind:__l="__l" item="{{userData.navlist}}" vueId="380011e0-2" wx:if="{{userInfo}}"></dynamic>
+        <view class="rule">
+            <view class="bg-white bg"></view>
+            <view class="margin-top-lg margin-lr-lg bg-white radius-12 flex justify-around padding-lr text-black text-sm rule-content">
+                <view bindtap="__e" class="padding-sm cu-chat align-center" data-event-opts="{{[ [ 'tap',[ [ 'clickItem',['$0'],[ [ ['ruleData','',rulIndex,'path'] ] ] ] ] ] ]}}" wx:for="{{ruleData}}" wx:for-index="rulIndex" wx:for-item="rulData" wx:key="rulIndex">
+                    <text class="{{['cuIcon-'+rulData.icon]}}" style="font-size:50rpx;"></text>
+                    <text class="margin-top-xs">{{rulData.title}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="cu-chat margin-lr-lg shadow-user padding-lr-lg bg-white margin-tb-xl">
+        <view bindtap="__e" class="flex justify-between padding-tb" data-event-opts="{{[ [ 'tap',[ [ 'clickItem',['$0'],[ [ ['userList','',index,'path'] ] ] ] ] ] ]}}" style="border-bottom:1rpx solid #E9E9E9;" wx:for="{{userList}}" wx:key="index">
+            <view>
+                <text class="{{['text-black margin-right-sm','cuIcon-'+item.icon]}}"></text>
+                <text class="text-black" wx:if="{{item.icon!=='service'}}">{{item.title}}</text>
+                <button class="contact" openType="contact" type="default" wx:if="{{item.icon==='service'}}">{{item.title}}</button>
+            </view>
+            <text class="cuIcon-right"></text>
+        </view>
+    </view>
+    <ad-custom unit-id="adunit-05bab3e248d80615"></ad-custom>
+</view>

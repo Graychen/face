@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "字符表情",
+    "backgroundColorTop": "#fff",
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

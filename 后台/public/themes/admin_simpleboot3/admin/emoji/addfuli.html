@@ -1,0 +1,140 @@
+<include file="public@header" />
+    <script src="__STATIC__/js/jquery.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:url('emoji/fuli')}">福利列表</a></li>
+			<li class="active"><a href="{:url('emoji/addfuli')}">采集福利</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form margin-top-20" action="{:url('emoji/fuliaddPosts')}">
+		    <div class="form-group">
+              <label for="input-link_name" class="col-sm-2 control-label">订单侠apikey</label>
+              <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="apikey" name="apikey" value="{$apikey.apikey}">
+              </div><span class="form-required"><button type="button" id="c" class="btn btn-primary js-ajax-submit" onclick="dindanxia()">apikey设置</button><a href="https://www.dingdanxia.com/" target="_blank">申请apikey</a></span>
+            </div>
+			<div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">类型<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="caiji_url" id="caiji_url">
+						<foreach name="fulicaiji" item="vo">
+						 <option value="{$vo}">{$key}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-name" class="col-sm-2 control-label">活动类型<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text"  placeholder="填写下面活动id" class="form-control" id="aid" name="aid">
+					    饿了么外卖天天领红包id①：20150318020002192<br>
+					    饿了么外卖天天领红包id②：20150318019998877<br>
+					    饿了么商超百亿补贴红包id：1585018034441<br>
+					    美团填这个：alibiaoqing
+				</div>
+			</div>
+			<div class="form-group">
+              <label for="input-link_name" class="col-sm-2 control-label">标题<span class="form-required">*</span></label>
+              <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_name" name="title" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-link_name" class="col-sm-2 control-label">红包价格<span class="form-required">*</span></label>
+              <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_name" name="money" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="input-link_name" class="col-sm-2 control-label">进度<span class="form-required">*</span></label>
+              <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="input-link_name" name="surplus" value="">
+              </div>
+            </div>
+            <div class="form-group">
+				<label for="input-target" class="col-sm-2 control-label">分类<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<select class="form-control" name="type" id="input-target">
+						<foreach name="fulitype" item="vo">
+						  <option value="{$key}">{$vo}</option>
+						</foreach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="input-image" class="col-sm-2 control-label">图标<span class="form-required">*</span></label>
+				<div class="col-md-6 col-sm-10">
+					<input type="text" class="form-control" id="input-image" name="icon" value=""> 
+					<img src="" id="input-image-preview">
+					<a href="javascript:uploadOneImage('图片上传','#input-image');">上传图片</a>
+				</div>
+			</div>
+			<div class="form-group">
+              <label for="input-link_name" class="col-sm-2 control-label">小程序appid<span class="form-required">*</span></label>
+              <div class="col-md-6 col-sm-10">
+                <input type="text" class="form-control" id="appid" name="appid" value="">
+              </div>
+            </div>
+			<div class="form-group">
+            <label for="input-link_description" class="col-sm-2 control-label">path<span class="form-required">*</span></label>
+            <div class="col-md-6 col-sm-10">
+                <textarea class="form-control" name="path" id="path"></textarea>
+              </div>
+            </div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="button" id="a" class="btn btn-primary js-ajax-submit" onclick="caiji()">采集链接</button>
+					<button type="submit" id="b" class="btn btn-primary js-ajax-submit" style="display:none">保存</button>
+					<a class="btn btn-default" href="javascript:history.back(-1);">{:lang('BACK')}</a>
+				</div>
+			</div>
+		</form>
+	</div>
+	<script src="__STATIC__/js/admin.js"></script>
+<script type="text/javascript">
+     function caiji() {
+            var caiji_url = $('#caiji_url').val();
+            var aid = $('#aid').val();
+            $.ajax({
+                url: "{:url('emoji/fuliaddpost')}",
+                data: {caiji_url: caiji_url,aid:aid},
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    //console.log(data);
+                    if (data.code == 1) {
+                        if (data.data == 0) {
+                          alert('请填写活动类型');
+                        }else if(data.data.app_id){
+                          $('#appid').val(data.data.app_id);
+                          $('#path').val(data.data.page_path);
+                          $('#a').css("display","none");
+                          $('#b').css("display","");
+                        }else{
+                          $('#appid').val('wxece3a9a4c82f58c9');
+                          $('#path').val(data.data.wx_miniprogram_path);
+                          $('#a').css("display","none");
+                          $('#b').css("display","");
+                        }
+                    }
+                },
+            });
+        }
+    function dindanxia(){
+        var apikey = $('#apikey').val();
+        $.ajax({
+            url:"{:url('emoji/dindanxia')}",
+            data:{apikey:apikey},
+            dataType:'json',
+            type:'post',
+            success:function(data){
+                if(data.code == 1){
+                    alert('设置成功');
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

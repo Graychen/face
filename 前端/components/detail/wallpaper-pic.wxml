@@ -1,0 +1,9 @@
+<view>
+    <view bindtap="__e" class="cu-chat align-center relative" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],['resdata'] ] ] ] ]}}" wx:if="{{swiperShow}}">
+        <image class="w-100" lazyLoad="{{true}}" mode="widthFix" src="{{resdata.src}}"></image>
+        <view class="cu-chat align-center time" wx:if="{{timeShow}}">
+            <text class="time-size">{{timeData.time}}</text>
+            <text class="day-size">{{timeData.monthDay+' '+timeData.week}}</text>
+        </view>
+    </view>
+</view>

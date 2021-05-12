@@ -1,0 +1,46 @@
+<view>
+    <view class="bg-yellow">
+        <view class="center cu-chat">
+            <text class="margin-top">总获得积分</text>
+            <text class="text-bold text-sl margin-top-xs">{{recordData.total}}</text>
+        </view>
+        <view class="w-100 flex justify-around margin-top padding-bottom">
+            <view class="center cu-chat">
+                <text class="text-lg text-bold">{{recordData.join_num}}</text>
+                <text class="text-sm margin-top-xs">报名次数</text>
+            </view>
+            <view class="center cu-chat">
+                <text class="text-lg text-bold">{{recordData.dknum}}</text>
+                <text class="text-sm margin-top-xs">成功次数</text>
+            </view>
+            <view class="center cu-chat">
+                <text class="text-lg text-bold">{{recordData.max_score}}</text>
+                <text class="text-sm margin-top-xs">最高积分</text>
+            </view>
+        </view>
+    </view>
+    <view class="w-100 relative margin-bottom" wx:for="{{recordData.list}}" wx:key="index">
+        <view class="margin-lr padding-sm bg-white radius-12 text-black">
+            <view class="flex justify-between align-center padding-bottom-sm solid-bottom">
+                <text>{{item.date}}</text>
+                <text class="{{['text-sm',item.status==1?'text-blue':item.status==2?'text-green':'text-red']}}">{{item.status==1?'挑战中':item.status==2?'挑战成功':'挑战失败'}}</text>
+            </view>
+            <view class="w-100 flex justify-between margin-top-sm">
+                <view class="center cu-chat">
+                    <text class="text-lg text-bold">{{item.total}}</text>
+                    <text class="text-sm margin-top-xs text-color-b2">总积分</text>
+                </view>
+                <view class="center cu-chat">
+                    <text class="text-lg text-bold">{{item.dknum?item.dknum:'--'}}</text>
+                    <text class="text-sm margin-top-xs text-color-b2">达标人数</text>
+                </view>
+                <view class="center cu-chat">
+                    <text class="text-lg text-bold">{{item.score?item.score:'--'}}</text>
+                    <text class="text-sm margin-top-xs text-color-b2">所获积分</text>
+                </view>
+            </view>
+        </view>
+        <view class="bg-yellow absolute" wx:if="{{!index}}"></view>
+    </view>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="5b44fa00-1"></uni-load-more>
+</view>

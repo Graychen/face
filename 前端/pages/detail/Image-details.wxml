@@ -1,0 +1,19 @@
+<view>
+    <text class="desc-hidden">{{detail.desc}}</text>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="100rpx" vueId="2d1434fb-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <search-home bind:__l="__l" bind:searchValue="__e" data-event-opts="{{[ [ '^searchValue',[ ['searchValue'] ] ] ]}}" vueId="{{'2d1434fb-2'+','+'2d1434fb-1'}}"></search-home>
+        </view>
+        <view slot="content">
+            <show-pic adClick="{{adClick}}" bind:__l="__l" bind:changeLogin="__e" bind:listenBack="__e" bind:videoAdShow="__e" current="{{current}}" data-event-opts="{{[ [ '^listenBack',[ ['listenBack'] ] ],[ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeLogin',[ ['changeLogin'] ] ] ]}}" number="{{number}}" resdata="{{imgList}}" userInfo="{{userInfo}}" vueId="{{'2d1434fb-3'+','+'2d1434fb-1'}}"></show-pic>
+            <fun-but adClick="{{adClick}}" bind:__l="__l" bind:changeIcon="__e" bind:changeLogin="__e" bind:videoAdShow="__e" current="{{current}}" data-event-opts="{{[ [ '^changeIcon',[ ['changeIcon'] ] ],[ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeLogin',[ ['changeLogin'] ] ] ]}}" imgList="{{imgList}}" resdata="{{cuIconList}}" userInfo="{{userInfo}}" vueId="{{'2d1434fb-4'+','+'2d1434fb-1'}}"></fun-but>
+            <ad-custom unit-id="adunit-05bab3e248d80615"></ad-custom>
+            <ads bind:__l="__l" vueId="{{'2d1434fb-5'+','+'2d1434fb-1'}}"></ads>
+            <hot-nav bind:__l="__l" icon="same" title="相关推荐" type="about" vueId="{{'2d1434fb-6'+','+'2d1434fb-1'}}"></hot-nav>
+            <more-pic bind:__l="__l" resdata="{{dataList}}" vueId="{{'2d1434fb-7'+','+'2d1434fb-1'}}"></more-pic>
+        </view>
+    </tui-sticky>
+    <ads-video adType="{{2}}" bind:__l="__l" bind:addCommission="__e" bind:changeAd="__e" bind:updateUserInfo="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeAd',[ ['changeAd'] ] ],[ '^addCommission',[ ['addCommission'] ] ],[ '^updateUserInfo',[ ['updateUserInfo'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="2d1434fb-8"></ads-video>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="2d1434fb-9"></uni-load-more>
+    <tui-modal bind:__l="__l" bind:click="__e" content="您还未登录，请先登录" data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}" maskClosable="{{false}}" show="{{showLogin}}" vueId="2d1434fb-10"></tui-modal>
+</view>

@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "dynamic-pro": "/components/bbs/dynamic-pro",
+        "topic": "/components/bbs/topic",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

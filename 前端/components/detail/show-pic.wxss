@@ -1,0 +1,26 @@
+.all {
+    position: relative;
+    width: 750rpx;
+}
+
+.left-img {
+    left: 0;
+}
+
+.left-img,.right-img {
+    width: 125rpx;
+    font-size: 26rpx;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.right-img {
+    right: 0;
+}
+
+.img-img {
+    width: 500rpx;
+    border: 1rpx solid #e0e0e0;
+    border-radius: 12rpx;
+}

@@ -1,0 +1,64 @@
+.page-all {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    z-index: 10;
+}
+
+.popup-content {
+    width: 650rpx;
+    position: relative;
+    padding: 40rpx;
+    border-radius: 12rpx;
+    background-color: #f1f1f1;
+}
+
+.pop-text {
+    font-size: 56rpx;
+    font-weight: 700;
+    position: absolute;
+    bottom: 30rpx;
+    color: #000;
+}
+
+.integral {
+    width: 500rpx;
+    text-align: center;
+    padding: 10rpx 0;
+    background-color: #e9e9e9;
+    color: #666;
+}
+
+.content-img {
+    position: relative;
+    border-radius: 12rpx;
+}
+
+.btn-item {
+    font-size: 50rpx;
+    color: #b2b2b2;
+}
+
+.btn-close {
+    font-size: 40rpx;
+    position: absolute;
+    top: -22rpx;
+    right: -22rpx;
+    padding: 6rpx;
+    border-radius: 25px;
+    background-color: #fff;
+}
+
+.btn {
+    height: auto;
+    color: #333;
+    padding: 0!important;
+    -webkit-box-pack: unset;
+    justify-content: unset;
+    border-radius: unset;
+    box-sizing: border-box;
+    background-color: transparent!important;
+}

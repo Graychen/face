@@ -1,0 +1,51 @@
+<view class="body">
+    <image class="header-img" mode="widthFix" src="/static/image/banner/header.png"></image>
+    <view class="content">
+        <view class="menu">
+            <view bindtap="__e" class="{{['menu-items',selectCurrent==index?'menu-active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'touchMenu',[index] ] ] ] ]}}" wx:for="{{menu}}" wx:key="index">
+                <image class="menu-items-img" lazyLoad="{{true}}" mode="aspectFill" src="{{item.src}}"></image>
+                <text class="menu-items-name">{{item.name}}</text>
+            </view>
+        </view>
+        <button bindtap="__e" class="coupon" data-event-opts="{{[ [ 'tap',[ [ 'receive',['$0'],[ [ ['data','',index,'appInfo'] ] ] ] ] ] ]}}" id="coupon" wx:for="{{data}}" wx:key="index">
+            <view class="coupon-left">
+                <image class="coupon-left-img" lazyLoad="{{true}}" mode="aspectFill" src="{{item.icon}}"></image>
+                <view class="coupon-left-content">
+                    <text class="coupon-left-content-title">{{item.title}}</text>
+                    <view class="coupon-left-content-b">
+                        <text class="coupon-left-content-b-money">{{item.money}}</text>
+                        <text class="coupon-left-content-b-text">元</text>
+                        <view class="coupon-left-content-b-progress">
+                            <text class="coupon-left-content-b-progress-text">今日已领</text>
+                            <view class="coupon-left-content-b-progress-line">
+                                <view class="coupon-left-content-b-progress-line-active" style="{{'width:'+item.surplus/500*90+'%'+';'+'border-radius:'+(item.surplus>=500?'50px':'50px 0 0 50px')+';'}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="coupon-right">
+                <text class="coupon-right-btn">立即领取</text>
+                <view class="coupon-right-cir coupon-right-top"></view>
+                <view class="coupon-right-cir coupon-right-bottom"></view>
+            </view>
+        </button>
+        <view class="coupon-nomore">没有更多了~</view>
+    </view>
+    <view class="{{['right-btn',scroll?'scroll':'']}}">
+        <button class="right-btn-items" openType="share">
+            <image class="right-btn-items-img" mode="widthFix" src="/static/image/share.png"></image>
+            <text class="right-btn-items-text">分享好友</text>
+        </button>
+    </view>
+    <view class="follow" style="{{'right:'+custom_right+'px'+';'}}" wx:if="{{show_tip}}">
+        <text class="follow-text">添加到我的小程序</text>
+        <view bindtap="__e" class="follow-right" data-event-opts="{{[ [ 'tap',[ [ 'closeTip',['$event'] ] ] ] ]}}">
+            <view class="follow-right-line"></view>
+            <image class="follow-right-close" mode="widthFix" src="/static/image/close.png"></image>
+        </view>
+        <image class="follow-triangle" mode="widthFix" src="/static/image/triangle.png"></image>
+    </view>
+    <ti-share bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['changeShow'] ] ] ]}}" show="{{show}}" type="share" vueId="4b8b38c0-1"></ti-share>
+    <ad-custom unit-id="adunit-05bab3e248d80615"></ad-custom>
+</view>

@@ -1,0 +1,18 @@
+{
+    "navigationBarTitleText": "",
+    "onReachBottomDistance": 50,
+    "navigationBarBackgroundColor": "#fbbd08",
+    "backgroundColorTop": "#FBBD08",
+    "usingComponents": {
+        "tui-sticky": "/components/common/sticky",
+        "search-home": "/components/detail/search-home",
+        "show-pic": "/components/detail/show-pic",
+        "fun-but": "/components/detail/fun-but",
+        "hot-nav": "/components/common/hot-nav",
+        "more-pic": "/components/common/more-pic",
+        "ads": "/components/common/ads",
+        "ads-video": "/components/common/ads-video",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

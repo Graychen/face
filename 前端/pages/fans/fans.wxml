@@ -1,0 +1,7 @@
+<view>
+    <view class="margin radius-12 bg-white padding flex align-center all-shadow" wx:if="{{total}}">总推荐人数：<text class="text-bold text-red">{{total+' 人'}}</text>
+    </view>
+    <fans-list bind:__l="__l" resdata="{{Fans}}" vueId="1e38d680-1"></fans-list>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="1e38d680-2"></back-top>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="1e38d680-3"></uni-load-more>
+</view>

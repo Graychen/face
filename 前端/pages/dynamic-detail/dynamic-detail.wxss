@@ -1,0 +1,49 @@
+page {
+    background-color: #fff;
+}
+
+.comm {
+    margin-left: 80rpx;
+    margin-top: -15rpx;
+}
+
+.comm-con {
+    width: 150rpx;
+    margin-top: 8rpx;
+}
+
+.btn-share {
+    height: auto;
+    color: #455b8a;
+    padding: 0 20rpx!important;
+    -webkit-box-pack: unset;
+    justify-content: unset;
+    border-radius: unset;
+    background-color: transparent!important;
+}
+
+.text-40 {
+    font-size: 40rpx!important;
+}
+
+.sanjiao {
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -5rpx;
+    left: 35%;
+    border-left: 20rpx solid transparent;
+    border-right: 20rpx solid transparent;
+    border-top: 20rpx solid #000;
+}
+
+.back {
+    color: #999;
+    padding: 6rpx 14rpx;
+}
+
+.comment-img {
+    width: 150rpx;
+    height: 150rpx;
+    border: 4rpx solid #000;
+}

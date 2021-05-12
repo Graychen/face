@@ -1,0 +1,21 @@
+.show-page {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000;
+}
+
+.show-src {
+    width: 650rpx;
+    margin: 200rpx 50rpx 0;
+}
+
+.show-tips {
+    width: 750rpx;
+    position: absolute;
+    bottom: 300rpx;
+    left: 0;
+    right: 0;
+}

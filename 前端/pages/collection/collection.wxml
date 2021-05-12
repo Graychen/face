@@ -1,0 +1,10 @@
+<view>
+    <view class="bg-white flex cu-chat justify-center align-center nothing" wx:if="{{!listData.length&&!isLoad}}">
+        <image lazyLoad="{{true}}" mode="widthFix" src="/static/images/make/nodata.png" style="width:300rpx;"></image>
+        <text class="text-color-b2 margin-top">这里居然什么都没有◔ ‸◔？</text>
+        <button bindtap="__e" class="cu-btn bg-yellow round shadow margin-top-lg lg" data-event-opts="{{[ [ 'tap',[ [ 'ToPageList',['$event'] ] ] ] ]}}">立即发现喜欢的表情</button>
+    </view>
+    <waterfall-flow bind:__l="__l" clearKey="{{clearKey}}" resdata="{{listData}}" vueId="25461d80-1"></waterfall-flow>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="25461d80-2"></back-top>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="25461d80-3" wx:if="{{isLoad}}"></uni-load-more>
+</view>

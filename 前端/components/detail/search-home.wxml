@@ -1,0 +1,13 @@
+<view class="cu-bar search bg-yellow">
+    <view class="search-form round shadow-blur">
+        <navigator class="action padding-right-sm text-color-b2" hoverClass="none" openType="switchTab" url="/pages/index/index">
+            <text>首页</text>
+        </navigator>
+        <text class="divide"></text>
+        <text class="cuIcon-search"></text>
+        <input adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'focus',[ [ 'InputFocus',['$event'] ] ] ],[ 'blur',[ [ 'InputBlur',['$event'] ] ] ],[ 'input',[ [ 'InputChange',['$event'] ] ] ] ]}}" placeholder="搜索关键词" type="text" value="{{keyWord}}"></input>
+        <view bindtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'Search',['$event'] ] ] ] ]}}" style="margin-right:0;">
+            <button class="cu-btn round bg-gradual-green button-search">搜索</button>
+        </view>
+    </view>
+</view>

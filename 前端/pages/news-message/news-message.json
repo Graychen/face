@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "消息",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColorTop": "#FFFFFF",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "tui-sticky": "/components/common/sticky",
+        "bbs-head-name": "/components/bbs/bbs-head-name",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

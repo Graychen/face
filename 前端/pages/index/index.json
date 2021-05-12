@@ -1,0 +1,20 @@
+{
+    "navigationBarTitleText": "棒棒糖表情包",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#FBBD08",
+    "backgroundColorTop": "#FBBD08",
+    "usingComponents": {
+        "top-tips": "/components/common/top-tips",
+        "search-input": "/components/index/search-input",
+        "every-search": "/components/index/every-search",
+        "items-menu": "/components/index/items-menu",
+        "regional": "/components/index/regional",
+        "routine-friend": "/components/index/routine-friend",
+        "hot-nav": "/components/common/hot-nav",
+        "more-pic": "/components/common/more-pic",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

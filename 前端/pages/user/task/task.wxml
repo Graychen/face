@@ -1,0 +1,36 @@
+<view>
+    <view class="sign center relative">
+        <view class="bg"></view>
+        <view class="content padding-sm all-shadow radius-12 cu-chat">
+            <view class="flex justify-between align-center">
+                <text class="text-black text-bold">{{'已连续签到'+(dataVal.lsign?dataVal.lsign:0)+'天'}}</text>
+                <navigator class="center text-color-b2" hoverClass="none" url="/pages/user/task/rule/rule">
+                    <text class="cuIcon-info margin-right-xs"></text>
+                    <text>签到规则</text>
+                </navigator>
+            </view>
+            <view class="text-color-b2 text-xs margin-tb-xs">听说连续签到的人，会赚更多的钱呢~</view>
+            <view class="flex justify-between">
+                <view class="{{['cu-chat align-center',!index&&dataVal.lsign?'signed':'not-signed']}}" wx:for="{{dataVal.list}}" wx:key="index">
+                    <view class="center cu-chat radius-12 padding-xs money">
+                        <image class="img" lazyLoad="{{true}}" mode="aspectFill" src="/static/images/user/money.png"></image>
+                        <text class="text-bold margin-top-sm">{{item}}</text>
+                    </view>
+                    <text class="text-bold margin-top-sm color">{{!index&&dataVal.lsign?'已签':dataVal.lsign+index+'天'}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bg-white center cu-chat">
+        <view class="task padding-top-xl">
+            <view class="flex align-center">
+                <view class="margin-right-sm line"></view>
+                <text class="text-black text-bold text-xl">每日任务</text>
+            </view>
+            <view class="text-color-b2 text-sm margin-top-xs text-bold project-desc">完成后可获得额外奖励哦！</view>
+            <daily-tasks bind:__l="__l" bind:receiveRewards="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^receiveRewards',[ ['receiveRewards'] ] ],[ '^videoAdShow',[ ['videoAdShow'] ] ] ]}}" list="{{dataVal.task}}" vueId="1bb3cbc2-1"></daily-tasks>
+        </view>
+    </view>
+    <popup-reward bind:__l="__l" bind:closePopup="__e" bind:watchAd="__e" data-event-opts="{{[ [ '^closePopup',[ ['closePopup'] ] ],[ '^watchAd',[ ['watchAd'] ] ] ]}}" dataVal="{{dataVal}}" popupKey="{{popupKey}}" rewardKey="{{rewardKey}}" rewardVal="{{rewardVal}}" vueId="1bb3cbc2-2"></popup-reward>
+    <ads-video adType="{{1}}" bind:__l="__l" bind:newScore="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^newScore',[ ['newScore'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="1bb3cbc2-3"></ads-video>
+</view>

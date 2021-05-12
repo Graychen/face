@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "bbs-head-name": "/components/bbs/bbs-head-name",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "user-info": "/components/user/user-info",
+        "dynamic": "/components/user/dynamic",
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

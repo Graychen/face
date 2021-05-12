@@ -1,0 +1,24 @@
+<view>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="80rpx" vueId="224ca5a0-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <view class="flex justify-around bg-white all-shadow" style="height:80rpx;line-height:80rpx;">
+                <text bindtap="__e" class="{{['padding-lr-xl',activeOptions==item.id?'text-bold solid-border-bottom text-red':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeOptions',['$0'],[ [ ['focusOrFans','id',item.id,'id'] ] ] ] ] ] ]}}" wx:for="{{focusOrFans}}" wx:key="id">{{item.name}}</text>
+            </view>
+        </view>
+        <view slot="content">
+            <view class="padding-left padding-tb-sm solid-bottom flex justify-between align-center" wx:for="{{focusData}}" wx:key="index">
+                <navigator class="flex" hoverClass="none" url="{{'/pages/jump-author/jump-author?id='+item.uid}}">
+                    <image class="round margin-right-sm head-pic" lazyLoad="{{true}}" mode="aspectFill" src="{{item.avatar}}"></image>
+                    <view class="flex-1 cu-chat justify-around">
+                        <text class="text-bold">{{item.uname}}</text>
+                    </view>
+                </navigator>
+                <view class="flex margin-right">
+                    <view bindtap="__e" class="{{['text-sm text-bold radius state',item.focus==1&&item.fans==1||item.focus==1&&item.fans==0?'bg-f5':item.focusData==0&&item.fans==0?'bg-yellow':'bg-yellow']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeState',['$0',index],[ [ ['focusData','',index,'uid'] ] ] ] ] ] ]}}">{{''+(item.focus==1&&item.fans==1?'互相关注':item.focus==1&&item.fans==0?'已关注':item.focus==0&&item.fans==0?'关注':'回关')+''}}</view>
+                </view>
+            </view>
+            <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="{{'224ca5a0-2'+','+'224ca5a0-1'}}"></back-top>
+            <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="{{'224ca5a0-3'+','+'224ca5a0-1'}}"></uni-load-more>
+        </view>
+    </tui-sticky>
+</view>

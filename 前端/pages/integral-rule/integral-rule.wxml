@@ -1,0 +1,10 @@
+<view class="margin-lr">
+    <view class="padding-lr-sm padding-tb cu-chat text-black bg-white radius-12 margin-top" style="line-height:40rpx;" wx:for="{{data}}" wx:key="index">
+        <view class="flex align-center">
+            <view class="line-right"></view>
+            <text class="text-lg text-bold margin-left-sm">{{item.title}}</text>
+        </view>
+        <view class="flex margin-top-xs" wx:for="{{item.data}}" wx:for-index="dataIndex" wx:for-item="data" wx:key="dataIndex">{{''+dataIndex+1+'.'}}<text class="flex-1 margin-left-xs">{{data}}</text>
+        </view>
+    </view>
+</view>

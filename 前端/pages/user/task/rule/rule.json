@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "签到规则",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FBBD08",
+    "backgroundColorTop": "#FBBD08",
+    "usingComponents": {
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

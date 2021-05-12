@@ -1,0 +1,22 @@
+<view class="{{['flex padding-top font-0',columns,bgColor]}}">
+    <view class="cu-chat align-center">
+        <navigator hoverClass="none" url="{{'/pages/detail/'+(Litem.type==3?'wallpaper-detail':'Image-details')+'?id='+Litem.id}}" wx:for="{{leftList}}" wx:for-index="Lindex" wx:for-item="Litem" wx:key="Lindex">
+            <image class="img" lazyLoad="{{true}}" mode="widthFix" src="{{Litem.src}}"></image>
+        </navigator>
+    </view>
+    <view class="cu-chat align-center" wx:if="{{column==3}}">
+        <navigator hoverClass="none" url="{{'/pages/detail/'+(Citem.type==3?'wallpaper-detail':'Image-details')+'?id='+Citem.id}}" wx:for="{{centerList}}" wx:for-index="Cindex" wx:for-item="Citem" wx:key="Cindex">
+            <image class="img" lazyLoad="{{true}}" mode="widthFix" src="{{Citem.src}}"></image>
+        </navigator>
+    </view>
+    <view class="cu-chat align-center">
+        <navigator hoverClass="none" url="{{'/pages/detail/'+(Ritem.type==3?'wallpaper-detail':'Image-details')+'?id='+Ritem.id}}" wx:for="{{rightList}}" wx:for-index="Rindex" wx:for-item="Ritem" wx:key="Rindex">
+            <image class="img" lazyLoad="{{true}}" mode="widthFix" src="{{Ritem.src}}"></image>
+        </navigator>
+    </view>
+    <view class="cu-chat justify-center align-center nothing text-color-b2" wx:if="{{noThingKey}}">
+        <image lazyLoad="{{true}}" mode="widthFix" src="/static/images/search/nothing.png" style="width:500rpx;"></image>
+        <text class="margin-top-sm">抱歉，暂无搜索结果</text>
+        <text class="margin-top-sm">净化网络，抵制低俗</text>
+    </view>
+</view>

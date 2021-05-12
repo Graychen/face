@@ -1,0 +1,7 @@
+<view>
+    <view class="flex justify-around align-center top-backorhome" style="{{style}}" wx:if="{{Custom.height}}">
+        <text bindtap="__e" class="cuIcon-back padding-sm" data-event-opts="{{[ [ 'tap',[ [ 'BackPage',['$event'] ] ] ] ]}}"></text>
+        <text class="center-con" style="{{'height:'+Custom.height-14+'px'+';'}}"></text>
+        <text bindtap="__e" class="cuIcon-homefill padding-sm" data-event-opts="{{[ [ 'tap',[ [ 'ToHome',['$event'] ] ] ] ]}}"></text>
+    </view>
+</view>

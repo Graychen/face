@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "福利中心",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColorTop": "#fff",
+    "usingComponents": {
+        "ti-share": "/components/popup/share",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

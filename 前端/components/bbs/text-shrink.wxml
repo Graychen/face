@@ -1,0 +1,8 @@
+<view class="font-shrink-box">
+    <view class="content-borderbox" style="{{openStauts?'height:auto;':'max-height:'+line*(size+16)+'rpx;overflow: hidden;'}}">
+        <view class="content-text" style="{{'line-height:'+size+16+'rpx;font-size:'+size+'rpx'}}">{{''+text+''}}</view>
+        <view class="ellipsis" style="{{'line-height:'+size+16+'rpx;font-size:'+size+'rpx;height:'+size+16+'rpx;background-color:'+ellipsisBack}}" wx:if="{{isShowBtn&&!openStauts&&!hideEllips}}">...</view>
+    </view>
+    <view catchtap="__e" class="open-close-btn" data-event-opts="{{[ [ 'tap',[ [ 'showAll',['$event'] ] ] ] ]}}" style="{{'font-size:'+btnSize+'rpx'}}" wx:if="{{isShowBtn}}">{{''+(openStauts?'收起':'展开')+''}}<text class="{{[ 'margin-left-xs','cuIcon-'+(openStauts?'fold':'unfold') ]}}"></text>
+    </view>
+</view>

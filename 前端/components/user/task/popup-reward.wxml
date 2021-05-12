@@ -1,0 +1,25 @@
+<view class="full-fixed" wx:if="{{popupKey}}">
+    <view class="bg-white padding relative radius-12 center cu-chat is-sign" wx:if="{{!dataVal.issign}}">
+        <image class="absolute" lazyLoad="{{true}}" mode="widthFix" src="/static/images/toast/sign-success.png"></image>
+        <text class="text-red text-bold text-xxl sign-reward">{{'+'+dataVal.list[0]+'积分'}}</text>
+        <text class="margin-top-sm text-color-b2">连续签到可以获得更多金币哦</text>
+        <view bindtap="__e" class="center round margin-top scale-w text-white text-xl text-bold" data-event-opts="{{[ [ 'tap',[ [ 'watchAd',['$event'] ] ] ] ]}}" wx:if="{{IsAdVideo}}">
+            <text class="cuIcon-video margin-right-sm"></text>+1积分</view>
+        <view bindtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'close',[false] ] ] ] ]}}">
+            <text class="cuIcon-close"></text>
+        </view>
+    </view>
+    <view class="reward padding padding-bottom-xl radius-12 center cu-chat" wx:if="{{rewardKey}}">
+        <text class="text-bold text-xxl title">恭喜你获得了</text>
+        <view class="round margin-top top-circle"></view>
+        <view class="bg-white relative text-bold center content">
+            <text class="text-sl margin-right-xs">{{rewardVal}}</text>
+            <text class="margin-top-sm">积分</text>
+            <view class="round l-c"></view>
+            <view class="round r-c"></view>
+        </view>
+        <view bindtap="__e" class="center round margin-top-xl text-xl text-bold shadow close" data-event-opts="{{[ [ 'tap',[ [ 'close',[true] ] ] ] ]}}">
+            <text>立即收下</text>
+        </view>
+    </view>
+</view>

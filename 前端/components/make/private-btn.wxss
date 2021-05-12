@@ -1,0 +1,15 @@
+.btn {
+    width: 150rpx;
+    height: 100rpx;
+    font-weight: 700;
+    line-height: 100rpx;
+    text-align: center;
+    position: fixed;
+    right: 0;
+    bottom: 200rpx;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: #fbbd08;
+    box-shadow: 10rpx 10rpx 20rpx 10rpx rgba(0,0,0,.1);
+    z-index: 9;
+}

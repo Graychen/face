@@ -1,0 +1,81 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="{:url('emoji/ad')}">所有广告位</a></li>
+        <li><a href="{:url('emoji/adadd')}">添加广告</a></li>
+    </ul>
+    <form method="post" class="js-ajax-form margin-top-20" action="{:url('Emoji/addelall')}">
+        <div class="table-actions">
+            <button class="btn btn-sm btn-primary js-ajax-submit" type="submit">批量删除</button>
+        </div>
+        <php>$status=array("1"=>lang('DISPLAY'),"0"=>lang('HIDDEN'));</php>
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="16"><label><input type="checkbox" class="js-check-all" data-direction="x"
+                                             data-checklist="js-check-x"></label></th>
+                <th width="50">ID</th>
+                <th width="100">小程序名称</th>
+                <th width="50">appid</th>
+                <th width="50">广告</th>
+                <th width="50">审计</th>
+                <th width="50">付费</th>
+                <th width="50">激励广告</th>
+                <th width="50">首页广告</th>
+                <th width="50">详情广告</th>
+                <th width="50">免费时间（1小时=3600）</th>
+                <th width="50">广告提示</th>
+                <th width="120">{:lang('ACTIONS')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <foreach name="list" item="vo">
+                <tr>
+                    <td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]"
+                               value="{$vo.id}"></td>
+                    <td>{$vo.id}</td>
+                    <td><if condition=" $vo.name  neq '' ">{$vo.name}<else />哦豁</if></td>
+                    <td>{$vo.appid}</td>
+                    <td>
+                        <switch name="$vo.isVideo">
+                           <case value="0">关闭</case>
+                           <case value="1">开启</case>
+                        </switch>
+                    </td>
+                    <td>
+                        <switch name="$vo.isAudit">
+                           <case value="0">关闭</case>
+                           <case value="1">开启</case>
+                        </switch>
+                    </td>
+                    <td>
+                        <switch name="$vo.isPay">
+                           <case value="0">关闭</case>
+                           <case value="1">开启</case>
+                        </switch>
+                    </td>
+                    <td>{$vo.videoId}</td>
+                    <td>{$vo.plaidId}</td>
+                    <td>{$vo.interId}</td>
+                    <td>{$vo.time}</td>
+                    <td>{$vo.msg}</td>
+                    <td>
+                        <a class="btn btn-xs btn-primary" href="{:url('emoji/adedit',array('id'=>$vo['id']))}">{:lang('EDIT')}</a>
+                        <a class="btn btn-xs btn-danger" href="{:url('emoji/addelete',array('id'=>$vo['id']))}" class="js-ajax-delete">
+                            {:lang('DELETE')}
+                        </a>
+                    </td>
+                </tr>
+            </foreach>
+            </tbody>
+        </table>
+        <div class="table-actions">
+            <button class="btn btn-sm btn-primary js-ajax-submit" type="submit">批量删除</button>
+        </div>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

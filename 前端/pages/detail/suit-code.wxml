@@ -1,0 +1,13 @@
+<view>
+    <view class="all-shadow detail-top-position">
+        <search-home bind:__l="__l" bind:searchValue="__e" data-event-opts="{{[ [ '^searchValue',[ ['searchValue'] ] ] ]}}" keyWord="{{keyWord}}" vueId="0a701ec4-1"></search-home>
+        <scroll-view class="bg-white nav" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+            <view bindtap="__e" class="{{['cu-item',index==TabCur?'text-yellow cur':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'tabSelect',[index,'$0'],[ [ ['categoryList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{categoryList}}" wx:key="index">{{''+item.name+''}}</view>
+        </scroll-view>
+    </view>
+    <view style="margin-top:190rpx;">
+        <more-pic bind:__l="__l" noThingKey="{{noThingKey}}" resdata="{{list}}" vueId="0a701ec4-2"></more-pic>
+        <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="0a701ec4-3"></back-top>
+        <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="0a701ec4-4" wx:if="{{list.length}}"></uni-load-more>
+    </view>
+</view>

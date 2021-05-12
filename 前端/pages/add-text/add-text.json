@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "表情加字",
+    "navigationBarBackgroundColor": "#fbbd08",
+    "usingComponents": {
+        "t-color-picker": "/components/t-color-picker/t-color-picker",
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

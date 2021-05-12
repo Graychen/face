@@ -1,0 +1,20 @@
+<view>
+    <view class="header">
+        <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" maxlength="{{-1}}" placeholder="点击下方内容输入，完成后点击：复制" value="{{value}}"></textarea>
+        <view class="head-btns">
+            <view bindtap="__e" class="head-btns-btn head-btns-clear" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">清空</view>
+            <view bindtap="__e" class="head-btns-btn" data-event-opts="{{[ [ 'tap',[ [ 'copy',['$event'] ] ] ] ]}}">复制</view>
+        </view>
+        <view class="head-menu">
+            <view bindtap="__e" class="{{['menu-item',current==index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'setCurrent',[index,'$0'],[ [ ['menu','',index,'type'] ] ] ] ] ] ]}}" wx:for="{{menu}}" wx:key="index">{{item.name}}</view>
+            <view class="lines" style="{{'left:'+moveLines+'px'+';'}}"></view>
+        </view>
+    </view>
+    <!-- <view class="content" wx:for="{{data}}" wx:key="index">
+        <view class="cat-name">{{item.name}}</view>
+        <view class="{{['emoji-box',emojiWidth?'emoji-box-s':'']}}">
+            <view bindtap="__e" class="{{['emoji',emojiWidth?'short':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" data-event-params="{{res:res}}" wx:for="{{item.list}}" wx:for-index="resIndex" wx:for-item="res" wx:key="resIndex">{{res}}</view>
+        </view>
+    </view> -->
+    <view bindtap="__e" class="loadmore" data-event-opts="{{[ [ 'tap',[ [ 'loadMoreData',['$event'] ] ] ] ]}}">{{loadMore}}</view>
+</view>

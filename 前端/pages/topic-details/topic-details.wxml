@@ -1,0 +1,18 @@
+<view>
+    <view class="padding solid-bottom cu-chat">
+        <text class="text-bold text-xl">{{'# '+topicData.name}}</text>
+        <text class="margin-tb-sm">{{topicData.desc}}</text>
+        <view class="flex align-center text-color-b2">
+            <text>{{topicData.newsnum}}</text>动态<text class="margin-left-sm">{{topicData.people}}</text>参与</view>
+    </view>
+    <view class="margin-top-sm margin-left-xs flex">
+        <view bindtap="__e" class="padding-lr-sm text-lg text-bold" data-event-opts="{{[ [ 'tap',[ [ 'changeClass',['$0','$1'],[ [ ['classification','id',classItem.id,'id'] ],[ ['classification','id',classItem.id,'order'] ] ] ] ] ] ]}}" wx:for="{{classification}}" wx:for-index="classIndex" wx:for-item="classItem" wx:key="id">
+            <text class="{{['padding-tb-xs',activeClass==classItem.id?'active-class':'text-color-b2']}}">{{classItem.name}}</text>
+        </view>
+    </view>
+    <dynamic-pro bind:__l="__l" bind:callBackDelBbs="__e" bind:callBackIsLike="__e" data-event-opts="{{[ [ '^callBackIsLike',[ ['callBackIsLike'] ] ],[ '^callBackDelBbs',[ ['callBackDelBbs'] ] ] ]}}" resdata="{{topicData.news}}" vueId="4d90a8f6-1"></dynamic-pro>
+    <navigator class="bg-yellow round shadow center cu-chat text-black text-bold release" url="{{'/pages/release/release?id='+topicData.id+'&name='+topicData.name}}">
+        <text class="cuIcon-add"></text>发帖</navigator>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="4d90a8f6-2"></back-top>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="4d90a8f6-3"></uni-load-more>
+</view>

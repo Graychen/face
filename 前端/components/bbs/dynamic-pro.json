@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "text-shrink": "/components/bbs/text-shrink",
+        "topic": "/components/bbs/topic",
+        "bbs-head-name": "/components/bbs/bbs-head-name",
+        "open-menu": "/components/bbs/open-menu",
+        "bbs-pic": "/components/bbs/bbs-pic",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

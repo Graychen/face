@@ -1,0 +1,13 @@
+<view>
+    <view class="flex justify-between padding-tb-xl padding-lr-xl align-center head-border">
+        <view class="flex align-center">
+            <image catchtap="__e" class="radius-12 head-img" data-event-opts="{{[ [ 'tap',[ [ 'preView',['$0'],['author.avatar'] ] ] ] ]}}" lazyLoad="{{true}}" mode="aspectFill" src="{{author.avatar}}"></image>
+            <text class="text-xl text-bold margin-left">{{author.uname}}</text>
+        </view>
+        <view bindtap="__e" class="{{['text-sm text-bold radius state',author.focus==1&&author.fans==1||author.focus==1&&author.fans==0?'bg-f5':author.focusData==0&&author.fans==0?'bg-yellow':'bg-yellow']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeState',['$0'],['author.uid'] ] ] ] ]}}" wx:if="{{userId}}">{{''+(author.focus==1&&author.fans==1?'互相关注':author.focus==1&&author.fans==0?'已关注':author.focus==0&&author.fans==0?'关注':'回关')+''}}</view>
+    </view>
+    <dynamic-pro bind:__l="__l" bind:callBackDelBbs="__e" bind:callBackIsLike="__e" data-event-opts="{{[ [ '^callBackIsLike',[ ['callBackIsLike'] ] ],[ '^callBackDelBbs',[ ['callBackDelBbs'] ] ] ]}}" resdata="{{data}}" vueId="6fafb7ea-1"></dynamic-pro>
+    <tui-tips bind:__l="__l" fixed="{{false}}" imgUrl="/static/images/toast/img_nodata.png" vueId="6fafb7ea-2" vueSlots="{{['default']}}" wx:if="{{nodata}}">暂无动态</tui-tips>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="6fafb7ea-3"></back-top>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="6fafb7ea-4" wx:if="{{scrollTop>200}}"></uni-load-more>
+</view>

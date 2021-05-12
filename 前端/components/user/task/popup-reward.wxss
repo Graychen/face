@@ -1,0 +1,77 @@
+.is-sign {
+    width: 85vw;
+}
+
+.is-sign image {
+    width: 300rpx;
+    top: -150rpx;
+}
+
+.is-sign .sign-reward {
+    margin-top: 100rpx;
+}
+
+.is-sign .scale-w {
+    width: 80%;
+    height: 80rpx;
+    background-image: linear-gradient(90deg,#f0bf36,#fe7b09);
+}
+
+.reward {
+    width: 85vw;
+    background-image: linear-gradient(180deg,#ff8431,#ec4a1c);
+}
+
+.reward .title {
+    color: #f1e67a;
+}
+
+.reward .top-circle {
+    width: 60vw;
+    height: 16rpx;
+    background-color: #cb260a;
+    box-shadow: 0 -4rpx 1rpx 0rpx rgba(0,0,0,.1);
+}
+
+.reward .content {
+    width: 58vw;
+    height: 200rpx;
+    color: #ed5129;
+    margin-top: -8rpx;
+    border-radius: 0 0 12rpx 12rpx;
+    box-shadow: 0 10rpx 10rpx 0 rgba(0,0,0,.1);
+}
+
+.reward .content .l-c {
+    right: unset;
+    left: 0;
+    margin-left: -25rpx;
+    box-shadow: inset -5rpx 0 1rpx 0 rgba(0,0,0,.1);
+}
+
+.reward .content .l-c,.reward .content .r-c {
+    position: absolute;
+    top: 30rpx;
+    bottom: unset;
+    width: 50rpx;
+    height: 50rpx;
+    background-color: #f9781a;
+    mix-blend-mode: darken;
+}
+
+.reward .content .r-c {
+    right: 0;
+    left: unset;
+    margin-right: -25rpx;
+    box-shadow: inset 5rpx 0 6rpx 0 rgba(0,0,0,.1);
+}
+
+.reward .close {
+    width: 80%;
+    height: 80rpx;
+    background-color: #fdd736;
+}
+
+.reward .close text {
+    color: #ff3e27;
+}

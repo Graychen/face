@@ -1,0 +1,71 @@
+<view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'hideBoard',['$event'] ] ] ] ]}}">
+    <view class="padding solid-bottom cu-chat">
+        <view class="flex justify-between">
+            <bbs-head-name bind:__l="__l" pic="{{dynamicDetailData.avatar}}" uid="{{dynamicDetailData.uid}}" uname="{{dynamicDetailData.uname}}" vueId="612be240-1"></bbs-head-name>
+            <open-menu adClick="{{adClick}}" bind:__l="__l" bind:delBbs="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^delBbs',[ ['delBbs'] ] ] ]}}" images="{{dynamicDetailData.images}}" sid="{{dynamicDetailData.id}}" uid="{{dynamicDetailData.uid}}" vueId="612be240-2"></open-menu>
+        </view>
+        <text class="text-black text-lg margin-top-sm" style="line-height:45rpx;">{{dynamicDetailData.content}}</text>
+        <bbs-pic adClick="{{adClick}}" bbsDetailKey="{{true}}" bind:__l="__l" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ] ]}}" resdata="{{dynamicDetailData.images}}" uid="{{dynamicDetailData.uid}}" userInfo="{{userInfo}}" vueId="612be240-3"></bbs-pic>
+        <topic bind:__l="__l" resdata="{{dynamicDetailData.topic}}" vueId="612be240-4"></topic>
+        <view class="flex justify-between text-color-b2 text-sm margin-top-sm">
+            <text>{{dynamicDetailData.createtime}}</text>
+            <text>{{dynamicDetailData.view+' 次浏览'}}</text>
+        </view>
+    </view>
+    <view class="padding cu-chat">
+        <view class="text-black">
+            <text class="text-sm text-bold">最新评论</text>{{'（'+dynamicDetailData.commentnum+'）'}}</view>
+        <view class="padding-tb-sm cu-chat" wx:for="{{dynamicDetailData.comments}}" wx:key="index">
+            <view class="flex justify-between">
+                <bbs-head-name bind:__l="__l" pic="{{item.avatar}}" size="{{26}}" topKey="{{false}}" uid="{{item.uid}}" uname="{{item.uname}}" vueId="{{'612be240-5-'+index}}"></bbs-head-name>
+            </view>
+            <view class="cu-chat comm">
+                <view class="cu-chat">
+                    <text catchtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'openinput',['$event'] ] ] ] ]}}" data-index="{{index}}" data-info="{{item}}">{{item.content}}</text>
+                    <image catchtap="__e" class="comm-con" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$0'],[ [ ['dynamicDetailData.comments','',index,'image'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="widthFix" src="{{item.image}}" wx:if="{{item.image}}"></image>
+                    <view class="flex margin-top-xs align-center">
+                        <view catchtap="__e" class="flex align-center" data-event-opts="{{[ [ 'tap',[ [ 'openinput',['$event'] ] ] ] ]}}" data-index="{{index}}" data-info="{{item}}">
+                            <view class="bg-f5 text-xs round back">回复</view>
+                            <view class="text-xs text-color-b2 margin-left">{{item.createtime}}</view>
+                        </view>
+                        <view class="flex-1"></view>
+                    </view>
+                </view>
+                <comments-more bind:__l="__l" bind:callBackOpenInput="__e" class="vue-ref-in-for" data-event-opts="{{[ [ '^callBackOpenInput',[ ['callBackOpenInput'] ] ] ]}}" data-ref="{{'current'+index}}" ins="{{index}}" pid="{{item.id}}" resdata="{{item.items}}" vueId="{{'612be240-6-'+index}}" wx:if="{{item.items.length}}"></comments-more>
+            </view>
+        </view>
+    </view>
+    <view class="text-color-b2 margin-top-xl flex justify-center" wx:if="{{!dynamicDetailData.comments.length}}">还没有评论，快皮一下！</view>
+    <view style="{{'height:'+safeAreaBottom+'px'+';'}}"></view>
+    <view class="bottom-fun-btn padding-lr bg-white" style="{{'padding-bottom:'+(InputBottom?0:safeAreaHeight+'px')+';'+'bottom:'+InputBottom+'px'+';'}}">
+        <view catchtap="__e" class="solid-bottom padding-tb-xs padding-left bg-white font-0" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{image&&InputBottom}}">
+            <view style="position:relative;display:inline-block;">
+                <image class="radius-12 comment-img" lazyLoad="{{true}}" mode="aspectFill" src="{{image}}"></image>
+                <view catchtap="__e" class="close-btn" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}">
+                    <text class="cuIcon-close text-white"></text>
+                </view>
+            </view>
+        </view>
+        <view catchtap="__e" class="cu-bar input" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <input adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" class="solid-bottom" cursorSpacing="10" data-event-opts="{{[ [ 'focus',[ [ 'InputFocus',['$event'] ] ] ],[ 'blur',[ [ 'InputBlur',['$event'] ] ] ],[ 'input',[ [ 'InputChange',['$event'] ] ] ] ]}}" focus="{{true}}" holdKeyboard="{{true}}" maxlength="300" placeholder="{{defaultPlaceholder.name}}" value="{{inputVal?inputVal:''}}" wx:if="{{inputShow}}"></input>
+            <view catchtap="__e" class="flex-1 bg-f5 margin-right radius-12 padding-left-sm align-center text-xs text-color-b2" data-event-opts="{{[ [ 'tap',[ [ 'openBoard',['$event'] ] ] ] ]}}" style="height:50rpx;" wx:else>说点皮的...</view>
+            <view class="flex align-center" wx:if="{{InputBottom}}">
+                <view catchtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'chooseImg',['$event'] ] ] ] ]}}">
+                    <text class="cuIcon-roundaddfill text-grey"></text>
+                </view>
+                <button catchtap="__e" class="cu-btn bg-green shadow-blur" data-event-opts="{{[ [ 'tap',[ [ 'sendComment',['$event'] ] ] ] ]}}">发送</button>
+            </view>
+            <view class="flex color-45 text-40" wx:else>
+                <button catchtap="__e" class="cu-btn btn-share text-40" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" openType="share">
+                    <text class="margin-right-xs">{{dynamicDetailData.share}}</text>
+                    <text class="cuIcon-share"></text>
+                </button>
+                <view catchtap="__e" class="padding-left" data-event-opts="{{[ [ 'tap',[ [ 'like',['$0'],['dynamicDetailData.is_like'] ] ] ] ]}}">
+                    <text class="margin-right-xs">{{dynamicDetailData.like}}</text>
+                    <text class="{{[ 'cuIcon-appreciate'+(dynamicDetailData.is_like?'fill':'') ]}}"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <ads-video adType="{{4}}" bind:__l="__l" bind:addCommission="__e" bind:changeAd="__e" bind:updateUserInfo="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeAd',[ ['changeAd'] ] ],[ '^addCommission',[ ['addCommission'] ] ],[ '^updateUserInfo',[ ['updateUserInfo'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="612be240-7"></ads-video>
+</view>

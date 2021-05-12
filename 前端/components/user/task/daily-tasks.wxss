@@ -1,0 +1,51 @@
+.img {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.money {
+    color: #c89560;
+    background-color: #feecbf;
+}
+
+.money .money-img {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.demand {
+    width: 150rpx;
+    color: #c89560;
+    background-color: #efefef;
+}
+
+.demand text {
+    z-index: 2;
+}
+
+.demand .absolute {
+    position: absolute;
+    top: 0;
+    right: unset;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(90deg,#fcd06a,#fac43a);
+    z-index: 1;
+}
+
+.finish {
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.finish.not {
+    background-image: linear-gradient(90deg,#f0bf36,#fe7b09);
+}
+
+.finish.pass {
+    background-image: linear-gradient(90deg,#ff4c4d,#ff181a);
+}
+
+.finish.completed {
+    background-image: linear-gradient(90deg,#e2e2e2,#ddd);
+}

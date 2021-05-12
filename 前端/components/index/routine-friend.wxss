@@ -1,0 +1,6 @@
+.border {
+    width: 156rpx;
+    height: 156rpx;
+    border: 1rpx solid #e0e0e0;
+    border-radius: 12rpx;
+}

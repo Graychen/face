@@ -1,0 +1,10 @@
+<view class="flex justify-center align-center padding-tb bg-white all">
+    <view bindtap="__e" class="flex align-center justify-center text-color-b2 left-img" data-event-opts="{{[ [ 'tap',[ [ 'back',['$0',0],['current'] ] ] ] ]}}" wx:if="{{resdata.groupId}}">
+        <text class="cuIcon-back"></text>上一张</view>
+    <view class="cu-chat align-center">
+        <image bindtap="__e" class="img-img" data-event-opts="{{[ [ 'tap',[ [ 'preview',['$event'] ] ] ] ]}}" lazyLoad="{{true}}" mode="widthFix" src="{{$root.g0?resdata.list[current].src:resdata.src}}"></image>
+        <text class="margin-top-sm text-color-b2" wx:if="{{resdata.groupId}}">{{'第'+current+1+'/'+number+'张'}}</text>
+    </view>
+    <view bindtap="__e" class="flex align-center justify-center text-color-b2 right-img" data-event-opts="{{[ [ 'tap',[ [ 'back',['$0',1],['current'] ] ] ] ]}}" wx:if="{{resdata.groupId}}">下一张<text class="cuIcon-right"></text>
+    </view>
+</view>

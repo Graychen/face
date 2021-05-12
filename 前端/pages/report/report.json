@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "内容举报",
+    "navigationBarBackgroundColor": "#fbbd08",
+    "usingComponents": {
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

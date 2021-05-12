@@ -1,0 +1,8 @@
+<view>
+    <navigator catchtap="__e" class="radius-12" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" hoverClass="none" hoverStopPropagation="{{true}}" url="{{'/pages/jump-author/jump-author?id='+uid}}">
+        <view class="{{['flex',topKey?'align-center':'align-start']}}">
+            <image class="margin-right-sm head-pic" lazyLoad="{{true}}" mode="aspectFill" src="{{pic}}" wx:if="{{pic}}"></image>
+            <text class="text-bold" style="{{'color:#455B8A;'+'font-size:'+size+'rpx'+';'}}">{{uname}}</text>
+        </view>
+    </navigator>
+</view>

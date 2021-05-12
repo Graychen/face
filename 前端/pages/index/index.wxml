@@ -1,0 +1,16 @@
+<view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'closePopup',['$event'] ] ] ] ]}}">
+    <top-tips bind:__l="__l" bind:callBack="__e" data-event-opts="{{[ [ '^callBack',[ ['callBack'] ] ] ]}}" tipsKey="{{tipsKey}}" vueId="8dd740cc-1"></top-tips>
+    <search-input bind:__l="__l" bind:openKeys="__e" data-event-opts="{{[ [ '^openKeys',[ ['openKeys'] ] ] ]}}" keys="{{keys}}" vueId="8dd740cc-2" resdata="{{indexData.lunbo}}"></search-input>
+    <every-search bind:__l="__l" bind:listenChange="__e" data-event-opts="{{[ [ '^listenChange',[ ['listenChange'] ] ] ]}}" isLoad="{{isLoad}}" resdata="{{indexData.hotKeys.hotWords}}" vueId="8dd740cc-3" wordStart="{{indexData.hotKeys.wordStart}}"></every-search>
+    <ad-custom unit-id="adunit-05bab3e248d80615"></ad-custom>
+    <items-menu bind:__l="__l" isLoad="{{isLoad}}" resdata="{{indexData.menuNavIcon}}" vueId="8dd740cc-4"></items-menu>
+  
+    <regional bind:__l="__l" isLoad="{{isLoad}}" resdata="{{indexData.hotList}}" vueId="8dd740cc-5"></regional>
+    <routine-friend bind:__l="__l" resdata="{{indexData.groupList}}" vueId="8dd740cc-6"></routine-friend>
+    <view class="bg-white">
+        <hot-nav bind:__l="__l" icon="appreciatefill" more="查看更多" title="最近更新" type="1" vueId="8dd740cc-7"></hot-nav>
+        <more-pic bind:__l="__l" resdata="{{newList.list}}" vueId="8dd740cc-8"></more-pic>
+    </view>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="8dd740cc-9"></back-top>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="8dd740cc-10"></uni-load-more>
+</view>

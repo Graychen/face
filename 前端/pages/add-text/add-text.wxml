@@ -1,0 +1,80 @@
+<view>
+    <view class="cu-chat align-center padding-tb pic-content">
+        <movable-area class="pic-box" style="{{'height:'+height+'px'+';'}}">
+            <image class="pic-img" id="img" lazyLoad="{{true}}" mode="widthFix" src="{{imgData.src}}"></image>
+            <movable-view bindchange="__e" bindtouchstart="__e" class="no-wrap" data-event-opts="{{[ [ 'touchstart',[ [ 'touchStart',[boxIndex] ] ] ],[ 'change',[ [ 'changeView',['$event'] ] ] ] ]}}" direction="all" inertia="{{true}}" outOfBounds="{{true}}" x="{{box.x}}" y="{{box.y}}" wx:for="{{upData.box}}" wx:for-index="boxIndex" wx:for-item="box" wx:key="boxIndex">
+                <text class="move-text text-bold" style="{{'color:'+box.color+';'+'background-color:'+box.bgColor+';'+'font-size:'+box.size+'px'+';'}}">{{''+box.text+''}}</text>
+                <text bindtap="__e" class="cuIcon-close close-icon" data-event-opts="{{[ [ 'tap',[ [ 'close',[boxIndex] ] ] ] ]}}"></text>
+            </movable-view>
+        </movable-area>
+        <text class="text-color-b2 margin-left margin-top-xs">注：内容请不要超出红色边框，只显示边框内部内容</text>
+    </view>
+    <view class="margin-lr">
+        <view class="flex align-center justify-center margin-bottom-sm">
+            <text class="hori-line"></text>
+            <text class="margin-lr-sm text-color-b2">选择文字样式</text>
+            <text class="hori-line"></text>
+        </view>
+        <view class="flex align-center margin-bottom-sm">
+            <view class="margin-right-lg text-color-b2">
+                <text class="cuIcon-font margin-right-xs"></text>
+                <text>输入文字</text>
+            </view>
+            <view style="flex:1;">
+                <input bindinput="__e" class="input-font" data-event-opts="{{[ [ 'input',[ [ 'clickInput',['$event'] ] ] ] ]}}" placeholder="请在此处输入文字" type="text"></input>
+            </view>
+        </view>
+        <view class="flex align-center margin-bottom-sm">
+            <view class="margin-right-xs text-color-b2">
+                <text class="cuIcon-font margin-right-xs"></text>
+                <text>字体大小</text>
+            </view>
+            <view style="flex:1;">
+                <slider activeColor="#fbbd08" bindchanging="__e" data-event-opts="{{[ [ 'changing',[ [ 'changeSize',['$event'] ] ] ] ]}}" max="90" min="6" step="1" value="{{initInfo.size}}"></slider>
+            </view>
+        </view>
+        <view class="flex align-center margin-bottom-sm">
+            <view class="margin-right-lg text-color-b2">
+                <text class="cuIcon-skin margin-right-xs"></text>
+                <text>字体颜色</text>
+            </view>
+            <view class="flex">
+                <view bindtap="__e" class="{{['more-font-color',initInfo.initialNum===fontIndex?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeColor',[fontIndex,'$0'],[ [ ['initialColor','',fontIndex] ] ] ] ] ] ]}}" style="{{'background-color:'+fontColor+';'}}" wx:for="{{initialColor}}" wx:for-index="fontIndex" wx:for-item="fontColor" wx:key="fontIndex"></view>
+                <view bindtap="__e" class="{{['more',initInfo.initialNum===999?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'open',[1] ] ] ] ]}}">更多</view>
+            </view>
+        </view>
+        <view class="flex align-center margin-bottom-sm">
+            <view class="margin-right-lg text-color-b2">
+                <text class="cuIcon-colorlens margin-right-xs"></text>
+                <text>背景颜色</text>
+            </view>
+            <view class="flex">
+                <view bindtap="__e" class="{{['more-bg-color',initInfo.initialBgNum===fontBgColorIndex?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeBgColor',[fontBgColorIndex,'$0'],[ [ ['initialBgColor','',fontBgColorIndex] ] ] ] ] ] ]}}" style="{{'background-color:'+fontBgColor+';'}}" wx:for="{{initialBgColor}}" wx:for-index="fontBgColorIndex" wx:for-item="fontBgColor" wx:key="fontBgColorIndex">
+                    <image class="more-bg-color-img" mode="aspectFill" src="/static/images/make/opcatiy.png" wx:if="{{fontBgColorIndex===0}}"></image>
+                </view>
+                <view bindtap="__e" class="{{['more',initInfo.initialBgNum===999?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'open',[2] ] ] ] ]}}">更多</view>
+            </view>
+        </view>
+    </view>
+    <view class="flex justify-around margin-top-lg padding-bottom">
+        <view bindtap="__e" class="bg-white padding-tb-sm padding-lr radius-12" data-event-opts="{{[ [ 'tap',[ [ 'addBox',['$event'] ] ] ] ]}}">
+            <text class="cuIcon-add margin-right-xs"></text>
+            <text>文本框</text>
+        </view>
+        <view bindtap="__e" class="bg-white padding-tb-sm padding-lr radius-12" data-event-opts="{{[ [ 'tap',[ ['submit'] ] ] ]}}">
+            <text class="cuIcon-picfill margin-right-xs"></text>
+            <text>制作</text>
+        </view>
+        <view bindtap="__e" class="bg-white padding-tb-sm padding-lr radius-12" data-event-opts="{{[ [ 'tap',[ [ 'videoAdShow',[true] ] ] ] ]}}" wx:if="{{IsAdVideo}}">
+            <text class="cuIcon-video margin-right-xs"></text>
+            <text>赚积分</text>
+        </view>
+    </view>
+    <view class="pic-content text-center">
+        <text class="text-color-b2 margin-left margin-top-xs block">{{'制作表情需消耗1积分 当前积分：'+score+'积分'}}</text>
+        <text class="text-color-b2 margin-left margin-top-xs block">温馨提示：表情保存请长按图片发送给好友</text>
+    </view>
+    <t-color-picker bind:__l="__l" bind:confirm="__e" class="vue-ref" color="{{pickerColor}}" data-event-opts="{{[ [ '^confirm',[ ['confirm'] ] ] ]}}" data-ref="colorPicker" vueId="4e2229c0-1"></t-color-picker>
+    <ads-video adType="{{adType}}" bind:__l="__l" bind:changeAd="__e" bind:newScore="__e" bind:videoAdShow="__e" data-event-opts="{{[ [ '^videoAdShow',[ ['videoAdShow'] ] ],[ '^changeAd',[ ['changeAd'] ] ],[ '^newScore',[ ['newScore'] ] ] ]}}" loadAd="{{loadAd}}" showAd="{{showAd}}" userInfo="{{userInfo}}" vueId="4e2229c0-2"></ads-video>
+    <tui-modal bind:__l="__l" bind:click="__e" content="您还未登录，请先登录" data-event-opts="{{[ [ '^click',[ ['handleClick'] ] ] ]}}" maskClosable="{{false}}" show="{{showLogin}}" vueId="4e2229c0-3"></tui-modal>
+</view>

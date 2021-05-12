@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "聊天套路表情包",
+    "onReachBottomDistance": 50,
+    "navigationBarBackgroundColor": "#fbbd08",
+    "usingComponents": {
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

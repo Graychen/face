@@ -1,0 +1,19 @@
+{
+    "navigationBarTitleText": "制作表情",
+    "onReachBottomDistance": 50,
+    "enablePullDownRefresh": true,
+    "navigationBarBackgroundColor": "#fbbd08",
+    "backgroundColorTop": "#FBBD08",
+    "usingComponents": {
+        "tui-sticky": "/components/common/sticky",
+        "more-pic": "/components/common/more-pic",
+        "private-btn": "/components/make/private-btn",
+        "popup-private": "/components/make/popup-private",
+        "search": "/components/make/search",
+        "back-top": "/components/common/back-top",
+        "poup-pic": "/components/make/poup-pic",
+        "ads-video": "/components/common/ads-video",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

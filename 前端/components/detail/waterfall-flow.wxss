@@ -1,0 +1,17 @@
+.three-column .img {
+    width: 230rpx;
+    margin-left: 15rpx;
+    margin-bottom: 15rpx;
+    border-radius: 8rpx;
+}
+
+.three-column .img,.two-column .img {
+    box-shadow: 0 0 10rpx 0 rgba(0,0,0,.1);
+}
+
+.two-column .img {
+    width: 330rpx;
+    margin-left: 30rpx;
+    margin-bottom: 20rpx;
+    border-radius: 12rpx;
+}

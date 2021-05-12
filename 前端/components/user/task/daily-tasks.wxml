@@ -1,0 +1,27 @@
+<view>
+    <view class="{{['padding-tb flex align-center justify-between',index+1==list.length?'':'solid-bottom']}}" wx:for="{{list}}" wx:key="index">
+        <view class="flex align-center">
+            <image class="margin-right-sm round img" lazyLoad="{{true}}" mode="aspectFill" src="{{item.image}}"></image>
+            <view class="cu-chat justify-around">
+                <view class="flex align-center">
+                    <text class="text-lg text-bold text-black margin-right-xs">{{item.title}}</text>
+                    <view class="round flex align-center padding-right-sm money">
+                        <image class="round margin-right-xs money-img" lazyLoad="{{true}}" mode="aspectFill" src="/static/images/user/money.png"></image>
+                        <text class="text-bold">{{'+'+item.reward}}</text>
+                    </view>
+                </view>
+                <view class="flex margin-top-xs">
+                    <text class="text-color-b2 margin-right-sm text-sm">需完成</text>
+                    <view class="round relative hidden center text-bold demand">
+                        <text class="text-xs">{{(item.completed>=item.target?item.target:item.completed)+'/'+item.target}}</text>
+                        <view class="absolute" style="{{'width:'+item.completed/item.target*100+'%'+';'+'border-radius:'+(item.completed>=item.target?'50px':'50px 0 0 50px')+';'}}"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="{{['padding-lr round text-bold text-white finish shadow',item.completed<item.target?'not':item.isReceive?'completed':'pass']}}" data-event-opts="{{[ [ 'tap',[ [ 'toFinish',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}">
+            <text wx:if="{{item.completed<item.target}}">去完成</text>
+            <text wx:else>{{item.isReceive?'已完成':'领取'}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "任务中心",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FBBD08",
+    "backgroundColorTop": "#FBBD08",
+    "usingComponents": {
+        "daily-tasks": "/components/user/task/daily-tasks",
+        "popup-reward": "/components/user/task/popup-reward",
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

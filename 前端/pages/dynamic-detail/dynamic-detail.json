@@ -1,0 +1,14 @@
+{
+    "navigationBarTitleText": "动态详情",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FBBD08",
+    "usingComponents": {
+        "bbs-head-name": "/components/bbs/bbs-head-name",
+        "open-menu": "/components/bbs/open-menu",
+        "bbs-pic": "/components/bbs/bbs-pic",
+        "topic": "/components/bbs/topic",
+        "comments-more": "/components/bbs/comments-more",
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

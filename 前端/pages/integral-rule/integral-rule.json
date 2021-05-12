@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "积分规则",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FBBD08",
+    "usingComponents": {
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

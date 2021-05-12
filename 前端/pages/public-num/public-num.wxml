@@ -1,0 +1,31 @@
+<view>
+    <view class="page-all flex justify-center align-center">
+        <view class="flex justify-center public-arrow">
+            <text class="text-white arrow-text">点我</text>
+            <text class="sanjiao"></text>
+        </view>
+        <view class="cu-chat justify-center align-center padding-lr padding-tb-lg content-all">
+            <text class="follow-hot">关注棒棒糖表情包</text>
+            <view class="follow-name">
+                <text class="follow-name-text">棒棒糖表情包图片大全</text>
+            </view>
+            <view class="cu-chat align-center margin-bottom-lg add-pro">
+                <text class="margin-bottom-sm">转发</text>
+                <text>添加到我的小程序</text>
+            </view>
+            <view class="cu-chat">
+                <view class="flex flex-nowrap align-center margin-bottom-xs">
+                    <text>1.点击右上方</text>
+                    <view class="flex justify-center align-center circle-sign">
+                        <text class="circle-small"></text>
+                        <text class="circle-big"></text>
+                        <text class="circle-small"></text>
+                    </view>
+                </view>
+                <text class="margin-bottom-xs">2.选择顶部: 棒棒糖表情包图片大全</text>
+                <text class="margin-bottom-xs">3.选择该团队的相关公众号</text>
+                <text class="margin-bottom-xs">4.点击关注后进入公众号</text>
+            </view>
+        </view>
+    </view>
+</view>

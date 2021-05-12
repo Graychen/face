@@ -1,0 +1,17 @@
+<view>
+    <navigator hoverClass="none" url="{{'/pages/jump-author/jump-author?id='+item.id}}" wx:for="{{resdata}}" wx:key="index">
+        <view class="bg-white radius-12 margin-lr margin-bottom padding-sm all-shadow flex justify-between align-center">
+            <view class="flex align-center">
+                <image class="round margin-right-sm head-portrait" lazyLoad="{{true}}" mode="aspectFill" src="{{item.avatar}}"></image>
+                <view class="cu-chat">
+                    <view class="flex align-center">
+                        <text class="text-black">{{item.nickname}}</text>
+                    </view>
+                    <text class="text-xs text-color-b2 margin-top-xs">{{item.createtime}}</text>
+                </view>
+            </view>
+            <view class="center">发表动态数量：<text class="text-bold">{{item.newsnum}}</text>
+            </view>
+        </view>
+    </navigator>
+</view>

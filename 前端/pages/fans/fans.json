@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "我的推荐",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FBBD08",
+    "onReachBottomDistance": 50,
+    "usingComponents": {
+        "fans-list": "/components/team-fans/fans-list",
+        "back-top": "/components/common/back-top",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

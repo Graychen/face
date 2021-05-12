@@ -1,0 +1,22 @@
+<view>
+    <view bindtap="__e" class="padding cu-chat solid-bottom" data-event-opts="{{[ [ 'tap',[ [ 'toPage',['$0'],[ [ ['likeData','',index,'news_id'] ] ] ] ] ] ]}}" wx:for="{{likeData}}" wx:key="index">
+        <view class="flex justify-between align-center">
+            <view class="flex">
+                <image class="radius avatar" lazyLoad="{{true}}" mode="aspectFill" src="{{item.avatar}}"></image>
+                <view class="cu-chat justify-between margin-left-sm">
+                    <text class="text-bold" style="font-size:26rpx;">{{item.uname}}</text>
+                    <text class="text-xs text-color-b2">{{item.createtime+(item.is_like?' · 点赞':'')+(item.content||item.image?' · 评论':'')}}</text>
+                </view>
+            </view>
+            <text catchtap="__e" class="cuIcon-delete text-color-b2 padding-xs" data-event-opts="{{[ [ 'tap',[ [ 'delLike',['$0',index],[ [ ['likeData','',index,'id'] ] ] ] ] ] ]}}"></text>
+        </view>
+        <text class="margin-top-xs">{{item.content}}</text>
+        <image catchtap="__e" class="margin-top-xs" data-event-opts="{{[ [ 'tap',[ [ 'preImage',['$0'],[ [ ['likeData','',index,'image'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="widthFix" src="{{item.image}}" style="width:350rpx;" wx:if="{{item.image}}"></image>
+        <view class="margin-top-sm radius-12 padding-left flex justify-between hidden text-bold text-sm bg-f5 bbs">
+            <text class="bbs-content">{{item.news_content}}</text>
+            <image class="img" lazyLoad="{{true}}" mode="aspectFill" src="{{item.news_image}}"></image>
+        </view>
+    </view>
+    <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="5d23192c-1"></back-top>
+    <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="5d23192c-2"></uni-load-more>
+</view>

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "hot-nav": "/components/common/hot-nav",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

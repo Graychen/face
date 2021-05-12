@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "套路朋友详情",
+    "navigationBarBackgroundColor": "#fbbd08",
+    "usingComponents": {
+        "ads": "/components/common/ads",
+        "ads-video": "/components/common/ads-video",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

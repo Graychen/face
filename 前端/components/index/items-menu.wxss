@@ -1,0 +1,22 @@
+.shadow {
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 10rpx;
+}
+
+.bottom-img-size {
+    width: 220rpx;
+    border-radius: 12rpx;
+}
+
+.cu-load {
+    width: 690rpx;
+    text-align: center;
+}
+
+.banner {
+    font-size: 0;
+    max-height: 122rpx;
+    padding-bottom: 30rpx;
+    overflow: hidden;
+}

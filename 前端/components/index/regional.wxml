@@ -1,0 +1,22 @@
+<view>
+    <view class="margin-bottom-sm" wx:for="{{resdata}}" wx:for-index="dataIndex" wx:for-item="data" wx:key="dataIndex">
+        <hot-nav bind:__l="__l" icon="hotfill" more="查看更多" order="{{data.order}}" title="{{data.title}}" type="{{data.type}}" vueId="{{'c89745a2-1-'+dataIndex}}"></hot-nav>
+        <view class="bg-white padding-lr padding-tb-xs flex flex-wrap justify-between" wx:if="{{dataIndex==0||dataIndex==1}}">
+            <navigator hoverClass="none" url="{{'/pages/detail/Image-details?id='+item.id}}" wx:for="{{data.data}}" wx:key="index">
+                <view class="cu-chat align-center padding-tb-xs">
+                    <image class="border" lazyLoad="{{dataIndex==1}}" mode="aspectFill" src="{{item.src}}"></image>
+                    <text class="margin-top-xs text-black name">{{item.name}}</text>
+                </view>
+            </navigator>
+            <view class="{{['cu-load load-regi',!isLoad?'loading':'over']}}" wx:if="{{!data.data.length}}"></view>
+        </view>
+        <view class="bg-white padding-lr padding-tb-xs flex flex-wrap justify-between" wx:if="{{dataIndex==2}}">
+            <navigator hoverClass="none" url="{{'/pages/detail/wallpaper-detail?id='+wallitem.id}}" wx:for="{{data.data}}" wx:for-index="wallindex" wx:for-item="wallitem" wx:key="wallindex">
+                <view class="cu-chat align-center padding-tb-xs wallpaper">
+                    <image class="border-wallpaper" lazyLoad="{{true}}" mode="widthFix" src="{{wallitem.src}}"></image>
+                </view>
+            </navigator>
+            <view class="{{['cu-load load-regi',!isLoad?'loading':'over']}}" wx:if="{{!data.data.length}}"></view>
+        </view>
+    </view>
+</view>

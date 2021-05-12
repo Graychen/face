@@ -1,0 +1,29 @@
+<view>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="100rpx" vueId="7c8106e0-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <view class="cu-bar search bg-yellow">
+                <view class="search-form round shadow-blur">
+                    <text class="cuIcon-search"></text>
+                    <input adjustPosition="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" confirmType="search" data-event-opts="{{[ [ 'focus',[ [ 'InputFocus',['$event'] ] ] ],[ 'blur',[ [ 'InputBlur',['$event'] ] ] ],[ 'input',[ [ 'InputChange',['$event'] ] ] ] ]}}" placeholder="搜索话题" type="text"></input>
+                    <view bindtap="__e" class="action" data-event-opts="{{[ [ 'tap',[ [ 'Search',['$event'] ] ] ] ]}}" style="margin-right:0;">
+                        <button class="cu-btn round bg-gradual-green button-search">搜索</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view slot="content">
+            <navigator class="flex justify-between align-center solid-bottom padding-lr padding-tb-sm" url="{{'/pages/topic-details/topic-details?id='+item.id}}" wx:for="{{topicData}}" wx:key="index">
+                <view class="flex text-black align-center">
+                    <text class="text-xxl text-bold">#</text>
+                    <view class="cu-chat margin-left">
+                        <text class="text-lg">{{item.name}}</text>
+                        <text class="text-color-b2 topic-desc">{{item.desc}}</text>
+                    </view>
+                </view>
+                <text class="text-color-b2 text-sm posts">{{item.number+'动态'}}</text>
+            </navigator>
+            <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="{{'7c8106e0-2'+','+'7c8106e0-1'}}"></back-top>
+            <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="{{'7c8106e0-3'+','+'7c8106e0-1'}}" wx:if="{{false}}"></uni-load-more>
+        </view>
+    </tui-sticky>
+</view>

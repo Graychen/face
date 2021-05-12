@@ -1,0 +1,20 @@
+<view catchtouchstart="__e" class="flex justify-center align-center popup-all" data-event-opts="{{[ [ 'touchstart',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{privateKey}}">
+    <view catchtouchstart="__e" class="bg-white cu-chat padding justify-center align-center radius-12 content-all" data-event-opts="{{[ [ 'touchstart',[ [ '',['$event'] ] ] ] ]}}">
+        <view class="radius-12" style="position:relative;">
+            <view catchtouchstart="__e" class="radius-12 viewimg" data-event-opts="{{[ [ 'touchstart',[ [ 'ViewImage',['$event'] ] ] ] ]}}">
+                <image lazyLoad="{{true}}" mode="aspectFill" src="{{imgList[0]}}"></image>
+                <view catchtouchstart="__e" class="content-close" data-event-opts="{{[ [ 'touchstart',[ [ 'DelImg',['$event'] ] ] ] ]}}" wx:if="{{imgList.length}}">
+                    <text class="cuIcon-close text-white"></text>
+                </view>
+            </view>
+            <view catchtouchstart="__e" class="solids radius-12 choose-img" data-event-opts="{{[ [ 'touchstart',[ [ 'ChooseImage',['$event'] ] ] ] ]}}" wx:if="{{!imgList.length}}">
+                <text class="cuIcon-cameraadd"></text>
+            </view>
+        </view>
+        <view catchtouchstart="__e" class="content-close" data-event-opts="{{[ [ 'touchstart',[ [ 'close',['$event'] ] ] ] ]}}">
+            <text class="cuIcon-close text-white"></text>
+        </view>
+        <button catchtouchstart="__e" class="cu-btn bg-yellow round lg shadow margin-top" data-event-opts="{{[ [ 'touchstart',[ [ 'make',['$event'] ] ] ] ]}}">立即制作</button>
+        <text class="margin-top">用户手动上传图片，表情制作完成后，系统将自动删除图片</text>
+    </view>
+</view>

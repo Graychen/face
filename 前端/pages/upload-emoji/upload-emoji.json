@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "我的上传",
+    "onReachBottomDistance": 50,
+    "navigationBarBackgroundColor": "#fbbd08",
+    "backgroundColorTop": "#fff",
+    "usingComponents": {
+        "tui-sticky": "/components/common/sticky",
+        "uni-load-more": "/components/common/uni-load-more/uni-load-more",
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

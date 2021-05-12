@@ -1,0 +1,68 @@
+page {
+    background-color: #fff;
+}
+
+.rule {
+    position: relative;
+    width: 750rpx;
+}
+
+.rule .bg {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.rule-content {
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,.1);
+}
+
+.shadow-user {
+    border-radius: 12rpx;
+    box-shadow: 0 0 10rpx 0 rgba(0,0,0,.1);
+}
+
+.contact {
+    position: relative;
+    display: inline;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 400rpx;
+    font-size: 28rpx;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    overflow: hidden;
+    cursor: none;
+}
+
+.contact,.contact:after {
+    box-sizing: border-box;
+    color: #333;
+    background-color: #fff;
+}
+
+.contact:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    transform: none;
+    transform-origin: 0 0;
+    border-radius: 0;
+}
+
+.contact:hover,button[type=default] {
+    color: #333;
+    background-color: #fff;
+}

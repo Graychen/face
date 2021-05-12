@@ -1,0 +1,143 @@
+.header {
+    position: sticky;
+    top: 0;
+    padding-top: 20rpx;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #fff;
+}
+
+.textarea {
+    height: 200rpx;
+    font-size: 28rpx;
+    padding: 20rpx;
+    border-radius: 12rpx;
+    background-color: #f8f8f8;
+}
+
+.head-btns,.textarea {
+    width: 710rpx;
+    margin-left: 20rpx;
+}
+
+.head-btns {
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.head-btns-btn {
+    width: 300rpx;
+    height: 70rpx;
+    font-size: 28rpx;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    line-height: 70rpx;
+    border-radius: 12rpx;
+    background-image: linear-gradient(180deg,#ffb300,#fbbd08);
+}
+
+.head-btns-clear {
+    font-weight: 400;
+    color: #777;
+    border: 3rpx solid #ddd;
+    background-image: unset;
+}
+
+.head-menu {
+    position: relative;
+    width: 750rpx;
+    padding: 0 20rpx;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
+.menu-item {
+    height: 80rpx;
+    font-size: 30rpx;
+    color: #999;
+    line-height: 80rpx;
+    margin-right: 20rpx;
+    z-index: 4;
+    transition: font-size,font-weight,color,margin-right .5s;
+}
+
+.lines {
+    width: 110rpx;
+    height: 24rpx;
+    position: absolute;
+    left: 20rpx;
+    bottom: 16rpx;
+    border-radius: 0 0 6rpx 6rpx;
+    background-image: linear-gradient(to bottom left,#fff,#ffb300,#fbbd08);
+    transition: left .5s;
+}
+
+.active {
+    font-size: 34rpx;
+    font-weight: 700;
+    margin-right: 40rpx;
+    color: #333;
+}
+
+.content {
+    padding: 20rpx;
+}
+
+.cat-name {
+    width: 710rpx;
+    font-size: 26rpx;
+    color: #999;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.emoji-box {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.emoji-box-s {
+    -webkit-box-pack: unset;
+    justify-content: unset;
+}
+
+.emoji {
+    display: inline-block;
+    min-width: 345rpx;
+    height: 80rpx;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 80rpx;
+    border-radius: 8rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+}
+
+.short {
+    min-width: 80rpx;
+    margin: 11rpx;
+}
+
+.loadmore {
+    width: 750rpx;
+    height: 90rpx;
+    font-size: 26rpx;
+    color: #999;
+    line-height: 80rpx;
+    text-align: center;
+    padding-bottom: 10rpx;
+    box-sizing: border-box;
+}

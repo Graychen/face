@@ -1,0 +1,64 @@
+<view>
+    <tui-sticky bind:__l="__l" scrollTop="{{scrollTop}}" stickyHeight="455rpx" vueId="e9021640-1" vueSlots="{{['header','content']}}">
+        <view slot="header">
+            <view class="bg-yellow">
+                <view class="flex justify-between align-center padding-lr padding-tb-lg">
+                    <view class="cu-chat">
+                        <text class="text-xs">积分余额</text>
+                        <text class="text-bold text-sl padding-top-sm">{{scoreData.score}}</text>
+                    </view>
+                    <view bindtap="__e" class="flex align-center bg-white padding-lr-sm padding-tb-xs round text-red all-shadow" data-event-opts="{{[ [ 'tap',[ [ 'toCash',['$event'] ] ] ] ]}}">
+                        <text class="cuIcon-rechargefill margin-right-xs"></text>
+                        <text class="text-xs">提现</text>
+                    </view>
+                </view>
+                <view class="flex justify-around padding-bottom">
+                    <view class="cu-chat align-center">
+                        <text class="text-xs">今日积分</text>
+                        <text class="text-xl padding-top-xs text-bold">{{scoreData.today}}</text>
+                    </view>
+                    <view class="cu-chat align-center">
+                        <text class="text-xs">昨日积分</text>
+                        <text class="text-xl padding-top-xs text-bold">{{scoreData.yesterday}}</text>
+                    </view>
+                    <view class="cu-chat align-center">
+                        <text class="text-xs">累计积分</text>
+                        <text class="text-xl padding-top-xs text-bold">{{scoreData.total}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="flex justify-around align-center bg-white text-black margin-bottom" style="box-shadow:0 10rpx 20rpx 0 rgba(0,0,0,.1);">
+                <text bindtap="__e" class="{{['padding-tb-sm',num==1?'text-bold text-red solid-border-bottom':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',[1] ] ] ] ]}}">积分明细</text>
+                <text bindtap="__e" class="{{['padding-tb-sm',num==2?'text-bold text-red solid-border-bottom':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeTab',[2] ] ] ] ]}}">提现记录</text>
+            </view>
+        </view>
+        <view slot="content">
+            <block wx:if="{{num==1}}">
+                <view class="flex padding-lr bg-white solid-bottom padding-tb-sm justify-between align-center" wx:for="{{scoreLog}}" wx:key="index">
+                    <view class="cu-chat">
+                        <text class="text-lg text-black">{{item.memo}}</text>
+                        <text>{{'积分余额: '+item.after}}</text>
+                    </view>
+                    <view class="cu-chat align-end">
+                        <text class="text-red text-xl text-bold">{{item.score+'积分'}}</text>
+                        <text class="text-color-b2">{{item.createtime}}</text>
+                    </view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class="flex padding-lr bg-white solid-bottom padding-tb-sm justify-between align-center" wx:for="{{drawLog}}" wx:key="index">
+                    <view class="cu-chat">
+                        <text class="text-lg text-black">{{item.status==0?'审核中':item.status==1?'审核通过':'审核不通过'}}</text>
+                        <view class="text-sm" style="width:420rpx;" wx:if="{{item.comment}}">{{item.comment}}</view>
+                    </view>
+                    <view class="cu-chat align-end">
+                        <text class="text-red text-xl text-bold">{{item.money+'元'}}</text>
+                        <text class="text-color-b2 flex-1">{{item.createtime}}</text>
+                    </view>
+                </view>
+            </block>
+            <back-top bind:__l="__l" scrollTop="{{scrollTop}}" vueId="{{'e9021640-2'+','+'e9021640-1'}}"></back-top>
+            <uni-load-more bind:__l="__l" iconType="snow" status="{{status}}" vueId="{{'e9021640-3'+','+'e9021640-1'}}"></uni-load-more>
+        </view>
+    </tui-sticky>
+</view>

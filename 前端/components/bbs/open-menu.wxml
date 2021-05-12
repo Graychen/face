@@ -1,0 +1,1 @@
+<view catchtap="__e" class="cuIcon-more flex align-center padding-left text-color-b2" data-event-opts="{{[ [ 'tap',[ [ 'openMenu',['$event'] ] ] ] ]}}" style="font-size:40rpx;"></view>

@@ -1,0 +1,22 @@
+.value-img {
+    margin-right: 8rpx;
+    margin-bottom: 8rpx;
+}
+
+.more-pic-small {
+    width: 195rpx;
+    height: 195rpx;
+}
+
+.more-pic-big {
+    width: 220rpx;
+    height: 220rpx;
+}
+
+.wid {
+    width: 400rpx;
+}
+
+.hei {
+    height: 400rpx;
+}

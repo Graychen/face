@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "上传表情",
+    "navigationBarBackgroundColor": "#fbbd08",
+    "usingComponents": {
+        "tui-modal": "/components/common/modal/modal"
+    }
+}

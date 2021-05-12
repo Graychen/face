@@ -1,0 +1,21 @@
+.relative {
+    position: relative;
+}
+
+.w-100 {
+    width: 750rpx;
+}
+
+.time {
+    position: absolute;
+    top: 300rpx;
+    color: #fff;
+}
+
+.time-size {
+    font-size: 130rpx;
+}
+
+.day-size {
+    font-size: 38rpx;
+}

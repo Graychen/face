@@ -1,0 +1,52 @@
+.fun-all {
+    width: 750rpx;
+    position: fixed;
+    bottom: 0;
+    color: #000;
+    z-index: 99999;
+    background-color: hsla(0,0%,100%,.9);
+    box-shadow: 0 -1rpx 20rpx 0 rgba(0,0,0,.1);
+}
+
+.but {
+    color: #333;
+    line-height: 1;
+    padding: 0;
+    border-radius: 0;
+}
+
+.but,.but:after,.but:before {
+    border: none!important;
+    background-color: transparent;
+}
+
+.btn-icon {
+    font-size: 36rpx;
+    color: #000;
+    font-weight: 700;
+    margin-bottom: 6rpx;
+}
+
+.but:hover {
+    color: #333;
+    background-color: transparent;
+}
+
+.btn-text {
+    font-size: 22rpx;
+    color: #000;
+}
+
+.fun-icon {
+    color: #000;
+    font-size: 36rpx;
+    font-weight: 700;
+}
+
+.fun-text {
+    font-size: 22rpx;
+}
+
+.fun-h {
+    height: 90rpx;
+}

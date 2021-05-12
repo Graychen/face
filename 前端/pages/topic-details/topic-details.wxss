@@ -1,0 +1,16 @@
+page {
+    background-color: #fff;
+}
+
+.active-class {
+    color: #000;
+    border-bottom: 5rpx solid #000;
+}
+
+.release {
+    width: 120rpx;
+    height: 120rpx;
+    position: fixed;
+    bottom: 80rpx;
+    right: 30rpx;
+}

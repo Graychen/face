@@ -1,0 +1,11 @@
+<view>
+    <view bindtap="__e" catchtouchmove="__e" class="page" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'back',['$event'] ] ] ] ]}}" wx:if="{{show}}">
+        <view catchtap="__e" class="content" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <image class="img" mode="widthFix" src="{{'/static/image/popup-'+type+'.jpg'}}"></image>
+            <text class="title">{{setTitle.title}}</text>
+            <text>{{setTitle.text1}}</text>
+            <text>{{setTitle.text2}}</text>
+            <button class="btn" id="popup" openType="share">点击分享</button>
+        </view>
+    </view>
+</view>
